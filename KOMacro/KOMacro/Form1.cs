@@ -141,6 +141,33 @@ namespace KOMacro
         public float SecondSpeedSkill05 = 10f;
         public float SecondSpeedSkill06 = 10f;
         public float SecondSpeedSkill07 = 0.5f;
+
+        public int HotKey_CapsLockID = 0;
+        public int HotKey_TabID = 1;
+        public int HotKey_ControlSpaceID = 2;
+
+        enum KeyModifier
+        {
+            None = 0,
+            Alt = 1,
+            Control = 2,
+            Shift = 4,
+            WinKey = 8
+        }
+        #endregion
+
+        #region DLLs
+        //Global Hotkey DLLs
+        [DllImport("user32.dll")]
+        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
+        [DllImport("user32.dll")]
+        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
+        //ApplicationIsActive DLLs
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        private static extern IntPtr GetForegroundWindow();
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
         #endregion
 
         public frmKOmacro()
@@ -153,6 +180,61 @@ namespace KOMacro
             CreateTimerSkills();
 
             InitSpeedComboboxes();
+
+            InitHotKeys(); 
+        }
+
+        public void InitHotKeys()
+        {
+            RegisterHotKey(this.Handle,
+                           HotKey_CapsLockID,
+                           (int)KeyModifier.None,
+                           Keys.CapsLock.GetHashCode());
+            // Register CapsLock as global hotkey. 
+
+            RegisterHotKey(this.Handle,
+                           HotKey_TabID,
+                           (int)KeyModifier.None,
+                           Keys.Tab.GetHashCode());
+            // Register Tab as global hotkey. 
+
+            RegisterHotKey(this.Handle,
+                           HotKey_ControlSpaceID,
+                           (int)KeyModifier.Control,
+                           Keys.Space.GetHashCode());
+            // Register Control + Space as global hotkey. 
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+
+            if (m.Msg == 0x0312)
+            {
+                /* Note that the three lines below are not needed if you only want to register one hotkey.
+                 * The below lines are useful in case you want to register multiple keys, which you can use a switch with the id as argument, or if you want to know which key/modifier was pressed for some particular reason. */
+
+                Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);                  // The key of the hotkey that was pressed.
+                KeyModifier modifier = (KeyModifier)((int)m.LParam & 0xFFFF);       // The modifier of the hotkey that was pressed.
+                int id = m.WParam.ToInt32();                                        // The id of the hotkey that was pressed.
+
+                if (id == HotKey_CapsLockID && !ZRRunning)
+                    StartSkills();
+                else if (id == HotKey_TabID && !SkillsRunning)
+                    StartBasic();
+                else if (id == HotKey_ControlSpaceID)
+                {
+                    if (Program.MainForm.Visible)
+                        Program.MainForm.Hide();
+                    else
+                        Program.MainForm.Show();
+                }
+            }
+        }
+
+        private void ExampleForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UnregisterHotKey(this.Handle, 0);       // Unregister hotkey with id 0 before closing the form. You might want to call this more than once with different id values if you are planning to register more than one hotkey.
         }
 
         public void CreateTimerSkills()
@@ -290,36 +372,7 @@ namespace KOMacro
                 btnStartBasic.Text = "Z-R Skillsiz Başlat";
             }
         }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == (Keys.CapsLock))
-            {
-                StartSkills();
-                return true;
-            }
-
-            else if (keyData == (Keys.Tab))
-            {
-                StartBasic();
-            }
-
-            else if (keyData == (Keys.Control | Keys.Space))
-            {
-                if (Program.MainForm.Visible)
-                {
-                    Program.MainForm.Hide();
-                    Console.WriteLine("hide");
-                }
-                else
-                {
-                    Program.MainForm.Show();
-                }
-                //MessageBox.Show("Show-disable background app!");
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
-
+        
         /// <summary>Returns true if the current application has focus, false otherwise</summary>
         public bool ApplicationIsActivated()
         {
@@ -336,12 +389,6 @@ namespace KOMacro
             return activeProcId == procId;
         }
 
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-        private static extern IntPtr GetForegroundWindow();
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
 
         private void frmKOmacro_Resize(object sender, EventArgs e)
         {
