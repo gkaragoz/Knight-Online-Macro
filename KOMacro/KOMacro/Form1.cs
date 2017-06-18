@@ -239,20 +239,77 @@ namespace KOMacro
 
         public void CreateTimerSkills()
         {
-            for (int ii = 0; ii < 7; ii++)
+            Timer t1 = new Timer();
+            t1.Tag = "Skill 1";
+            t1.Tick += delegate
             {
-                Timer timer = new Timer();
-                timer.Tag = "Skill " + (ii + 1);
-                timer.Tick += delegate {
-                    if (!ApplicationIsActivated())
-                        SendKeys.Send((ii + 1).ToString());
+                if (!ApplicationIsActivated())
+                    SendKeys.Send("1");
+            };
 
-                    //Console.WriteLine(timer.Tag + " used! (" + timer.Interval + ")");
-                };
+            Timer t2 = new Timer();
+            t2.Tag = "Skill 2";
+            t2.Tick += delegate
+            {
+                if (!ApplicationIsActivated())
+                    SendKeys.Send("2");
+            };
 
-                Skill skill = new Skill(timer);
-                skills.Add(skill);
-            }
+            Timer t3 = new Timer();
+            t3.Tag = "Skill 3";
+            t3.Tick += delegate
+            {
+                if (!ApplicationIsActivated())
+                    SendKeys.Send("3");
+            };
+
+            Timer t4 = new Timer();
+            t4.Tag = "Skill 4";
+            t4.Tick += delegate
+            {
+                if (!ApplicationIsActivated())
+                    SendKeys.Send("4");
+            };
+
+            Timer t5 = new Timer();
+            t5.Tag = "Skill 5";
+            t5.Tick += delegate
+            {
+                if (!ApplicationIsActivated())
+                    SendKeys.Send("5");
+            };
+
+            Timer t6 = new Timer();
+            t6.Tag = "Skill 6";
+            t6.Tick += delegate
+            {
+                if (!ApplicationIsActivated())
+                    SendKeys.Send("6");
+            };
+
+            Timer t7 = new Timer();
+            t7.Tag = "Skill 7";
+            t7.Tick += delegate
+            {
+                if (!ApplicationIsActivated())
+                    SendKeys.Send("7");
+            };
+
+            Skill skill1 = new Skill(t1);
+            Skill skill2 = new Skill(t2);
+            Skill skill3 = new Skill(t3);
+            Skill skill4 = new Skill(t4);
+            Skill skill5 = new Skill(t5);
+            Skill skill6 = new Skill(t6);
+            Skill skill7 = new Skill(t7);
+
+            skills.Add(skill1);
+            skills.Add(skill2);
+            skills.Add(skill3);
+            skills.Add(skill4);
+            skills.Add(skill5);
+            skills.Add(skill6);
+            skills.Add(skill7);
         }
 
         public void StartAllSkills()
