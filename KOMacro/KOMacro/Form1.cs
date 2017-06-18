@@ -12,58 +12,7 @@ namespace KOMacro
 {
     public partial class frmKOmacro : Form
     {
-        public bool Skill01Active = false;
-        public bool Skill02Active = false;
-        public bool Skill03Active = false;
-        public bool Skill04Active = false;
-        public bool Skill05Active = false;
-        public bool Skill06Active = false;
-        public bool Skill07Active = false;
-
-        public float MiliSpeedSkill01 = 100f;
-        public float MiliSpeedSkill02 = 100f;
-        public float MiliSpeedSkill03 = 100f;
-        public float MiliSpeedSkill04 = 100f;
-
-        public float SecondSpeedSkill05 = 10f;
-        public float SecondSpeedSkill06 = 10f;
-        public float SecondSpeedSkill07 = 0.5f;
-
-        public frmKOmacro()
-        {
-            InitializeComponent();
-            InitSpeedComboboxes();
-        }
-
-        public void InitSpeedComboboxes()
-        {
-            int [] miliSpeeds = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
-            float [] secondSpeeds = { 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-            for (int ii = 0; ii < miliSpeeds.Length; ii++)
-            {
-                cmbMiliSpeed01.Items.Add(miliSpeeds[ii]);
-                cmbMiliSpeed02.Items.Add(miliSpeeds[ii]);
-                cmbMiliSpeed03.Items.Add(miliSpeeds[ii]);
-                cmbMiliSpeed04.Items.Add(miliSpeeds[ii]);
-            }
-
-            for (int ii = 0; ii < secondSpeeds.Length; ii++)
-            {
-                cmbSecondSpeed05.Items.Add(secondSpeeds[ii]);
-                cmbSecondSpeed06.Items.Add(secondSpeeds[ii]);
-                cmbSecondSpeed07.Items.Add(secondSpeeds[ii]);
-            }
-
-            cmbMiliSpeed01.SelectedIndex = 0;
-            cmbMiliSpeed02.SelectedIndex = 0;
-            cmbMiliSpeed03.SelectedIndex = 0;
-            cmbMiliSpeed04.SelectedIndex = 0;
-
-            cmbSecondSpeed05.SelectedIndex = secondSpeeds.Length - 1;
-            cmbSecondSpeed06.SelectedIndex = secondSpeeds.Length - 1;
-            cmbSecondSpeed07.SelectedIndex = 9;
-        }
+        #region Events
 
         #region CheckBoxes Checked Events
         private void chcSkill01Active_CheckedChanged(object sender, EventArgs e)
@@ -143,6 +92,107 @@ namespace KOMacro
         {
             float amount = float.Parse(cmbSecondSpeed07.SelectedItem.ToString());
             SetSpeed(7, amount);
+        }
+        #endregion
+
+        #endregion
+
+        #region Variables
+        private List<Timer> timerSkills = new List<Timer>();
+
+        public bool Skill01Active = false;
+        public bool Skill02Active = false;
+        public bool Skill03Active = false;
+        public bool Skill04Active = false;
+        public bool Skill05Active = false;
+        public bool Skill06Active = false;
+        public bool Skill07Active = false;
+
+        public float MiliSpeedSkill01 = 100f;
+        public float MiliSpeedSkill02 = 100f;
+        public float MiliSpeedSkill03 = 100f;
+        public float MiliSpeedSkill04 = 100f;
+
+        public float SecondSpeedSkill05 = 10f;
+        public float SecondSpeedSkill06 = 10f;
+        public float SecondSpeedSkill07 = 0.5f;
+        #endregion
+
+        public frmKOmacro()
+        {
+            InitializeComponent();
+            InitSpeedComboboxes();
+
+            CreateTimerSkills();
+            SetTimerSkill(timerSkills[0], 1000);
+            SetTimerSkill(timerSkills[1], 2000);
+            SetTimerSkill(timerSkills[2], 1000);
+            SetTimerSkill(timerSkills[3], 500);
+            SetTimerSkill(timerSkills[4], 3000);
+            SetTimerSkill(timerSkills[5], 5000);
+        }
+
+        public void InitSpeedComboboxes()
+        {
+            int [] miliSpeeds = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
+            float [] secondSpeeds = { 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            for (int ii = 0; ii < miliSpeeds.Length; ii++)
+            {
+                cmbMiliSpeed01.Items.Add(miliSpeeds[ii]);
+                cmbMiliSpeed02.Items.Add(miliSpeeds[ii]);
+                cmbMiliSpeed03.Items.Add(miliSpeeds[ii]);
+                cmbMiliSpeed04.Items.Add(miliSpeeds[ii]);
+            }
+
+            for (int ii = 0; ii < secondSpeeds.Length; ii++)
+            {
+                cmbSecondSpeed05.Items.Add(secondSpeeds[ii]);
+                cmbSecondSpeed06.Items.Add(secondSpeeds[ii]);
+                cmbSecondSpeed07.Items.Add(secondSpeeds[ii]);
+            }
+
+            cmbMiliSpeed01.SelectedIndex = 0;
+            cmbMiliSpeed02.SelectedIndex = 0;
+            cmbMiliSpeed03.SelectedIndex = 0;
+            cmbMiliSpeed04.SelectedIndex = 0;
+
+            cmbSecondSpeed05.SelectedIndex = secondSpeeds.Length - 1;
+            cmbSecondSpeed06.SelectedIndex = secondSpeeds.Length - 1;
+            cmbSecondSpeed07.SelectedIndex = 9;
+        }
+
+
+        #region Timer Methods
+        public void CreateTimerSkills()
+        {
+            for (int ii = 0; ii < 7; ii++)
+            {
+                Timer timerSkill = new Timer();
+                timerSkill.Tag = "Skill " + ii;
+                timerSkill.Tick += delegate {
+                    Console.WriteLine(timerSkill.Tag + " used! (" + timerSkill.Interval + ")");
+                };
+                timerSkills.Add(timerSkill);
+            }
+        }
+
+        public void StopTimerSkill(Timer timer)
+        {
+            if (timer != null)
+                timer.Dispose();
+        }
+
+        public void SetTimerSkill(Timer timer, int miliseconds)
+        {
+            Timer temp = timer;
+
+            if (timer != null)
+                timer.Dispose();
+
+            timer = temp;
+            timer.Interval = miliseconds;
+            timer.Start();
         }
         #endregion
 
