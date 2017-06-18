@@ -301,7 +301,6 @@ namespace KOMacro
 
             timer = temp;
             timer.Interval = miliseconds;
-            timer.Start();
         }
         #endregion
 
