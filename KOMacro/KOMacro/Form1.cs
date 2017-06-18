@@ -100,6 +100,9 @@ namespace KOMacro
         #region Variables
         private List<Timer> timerSkills = new List<Timer>();
 
+        public bool SkillsRunning = false;
+        public bool ZRRunning = false;
+
         public bool Skill01Active = false;
         public bool Skill02Active = false;
         public bool Skill03Active = false;
@@ -240,6 +243,38 @@ namespace KOMacro
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void btnStartSkills_Click(object sender, EventArgs e)
+        {
+            SkillsRunning = !SkillsRunning;
+
+            if (SkillsRunning)
+            {
+                btnStartBasic.Enabled = false;
+                btnStartSkills.Text = "Durdur";
+            }
+            else
+            {
+                btnStartBasic.Enabled = true;
+                btnStartSkills.Text = "Skillerle Başlat";
+            }
+        }
+
+        private void btnStartBasic_Click(object sender, EventArgs e)
+        {
+            ZRRunning = !ZRRunning;
+
+            if (ZRRunning)
+            {
+                btnStartSkills.Enabled = false;
+                btnStartBasic.Text = "Durdur";
+            }
+            else
+            {
+                btnStartSkills.Enabled = true;
+                btnStartBasic.Text = "Z-R Skillsiz Başlat";
             }
         }
     }

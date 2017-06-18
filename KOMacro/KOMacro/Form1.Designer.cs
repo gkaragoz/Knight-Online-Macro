@@ -347,6 +347,7 @@
             this.btnStartSkills.TabIndex = 33;
             this.btnStartSkills.Text = "Skillerle Başlat";
             this.btnStartSkills.UseVisualStyleBackColor = true;
+            this.btnStartSkills.Click += new System.EventHandler(this.btnStartSkills_Click);
             // 
             // btnStartBasic
             // 
@@ -356,6 +357,7 @@
             this.btnStartBasic.TabIndex = 34;
             this.btnStartBasic.Text = "Z-R Skillsiz Başlat";
             this.btnStartBasic.UseVisualStyleBackColor = true;
+            this.btnStartBasic.Click += new System.EventHandler(this.btnStartBasic_Click);
             // 
             // txtSecondProgress
             // 
