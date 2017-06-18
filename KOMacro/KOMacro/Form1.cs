@@ -14,40 +14,144 @@ namespace KOMacro
     {
         #region Events
 
+        #region Button Click Events
+        private void btnStartSkills_Click(object sender, EventArgs e)
+        {
+            SkillsRunning = !SkillsRunning;
+
+            if (SkillsRunning)
+            {
+                btnStartBasic.Enabled = false;
+                btnStartSkills.Text = "Durdur";
+            }
+            else
+            {
+                btnStartBasic.Enabled = true;
+                btnStartSkills.Text = "Skillerle Başlat";
+            }
+        }
+
+        private void btnStartBasic_Click(object sender, EventArgs e)
+        {
+            ZRRunning = !ZRRunning;
+
+            if (ZRRunning)
+            {
+                btnStartSkills.Enabled = false;
+                btnStartBasic.Text = "Durdur";
+            }
+            else
+            {
+                btnStartSkills.Enabled = true;
+                btnStartBasic.Text = "Z-R Skillsiz Başlat";
+            }
+        }
+        #endregion
+
         #region CheckBoxes Checked Events
         private void chcSkill01Active_CheckedChanged(object sender, EventArgs e)
         {
             Skill01Active = !Skill01Active;
+
+            if (SkillsRunning && !Skill01Active) //Stop skill.
+            {
+                StopTimerSkill(timerSkills[0]);
+            }
+            else if (SkillsRunning) //Start skill.
+            {
+                var milisecond = (int)Convert.ToDouble(MiliSpeedSkill01.ToString());
+                StartTimerSkill(timerSkills[0], milisecond);
+            }
         }
 
         private void chcSkill02Active_CheckedChanged(object sender, EventArgs e)
         {
-            Skill02Active = !Skill03Active;
+            Skill02Active = !Skill02Active;
+
+            if (SkillsRunning && !Skill02Active) //Stop skill.
+            {
+                StopTimerSkill(timerSkills[1]);
+            }
+            else if (SkillsRunning) //Start skill.
+            {
+                var milisecond = (int)Convert.ToDouble(MiliSpeedSkill02.ToString());
+                StartTimerSkill(timerSkills[1], milisecond);
+            }
         }
 
         private void chcSkill03Active_CheckedChanged(object sender, EventArgs e)
         {
             Skill03Active = !Skill03Active;
+
+            if (SkillsRunning && !Skill03Active) //Stop skill.
+            {
+                StopTimerSkill(timerSkills[2]);
+            }
+            else if (SkillsRunning) //Start skill.
+            {
+                var milisecond = (int)Convert.ToDouble(MiliSpeedSkill03.ToString());
+                StartTimerSkill(timerSkills[2], milisecond);
+            }
         }
 
         private void chcSkill04Active_CheckedChanged(object sender, EventArgs e)
         {
             Skill04Active = !Skill04Active;
+
+            if (SkillsRunning && !Skill04Active) //Stop skill.
+            {
+                StopTimerSkill(timerSkills[3]);
+            }
+            else if (SkillsRunning) //Start skill.
+            {
+                var milisecond = (int)Convert.ToDouble(MiliSpeedSkill04.ToString());
+                StartTimerSkill(timerSkills[3], milisecond);
+            }
         }
 
         private void chcSkill05Active_CheckedChanged(object sender, EventArgs e)
         {
             Skill05Active = !Skill05Active;
+
+            if (SkillsRunning && !Skill05Active) //Stop skill.
+            {
+                StopTimerSkill(timerSkills[4]);
+            }
+            else if (SkillsRunning) //Start skill.
+            {
+                var milisecond = (int)Convert.ToDouble(SecondSpeedSkill05.ToString());
+                StartTimerSkill(timerSkills[4], milisecond);
+            }
         }
 
         private void chcSkill06Active_CheckedChanged(object sender, EventArgs e)
         {
             Skill06Active = !Skill06Active;
+
+            if (SkillsRunning && !Skill06Active) //Stop skill.
+            {
+                StopTimerSkill(timerSkills[5]);
+            }
+            else if (SkillsRunning) //Start skill.
+            {
+                var milisecond = (int)Convert.ToDouble(SecondSpeedSkill06.ToString());
+                StartTimerSkill(timerSkills[5], milisecond);
+            }
         }
 
         private void chcSkill07Active_CheckedChanged(object sender, EventArgs e)
         {
             Skill07Active = !Skill07Active;
+
+            if (SkillsRunning && !Skill07Active) //Stop skill.
+            {
+                StopTimerSkill(timerSkills[6]);
+            }
+            else if (SkillsRunning) //Start skill.
+            {
+                var milisecond = (int)Convert.ToDouble(SecondSpeedSkill07.ToString());
+                StartTimerSkill(timerSkills[6], milisecond);
+            }
         }
         #endregion
 
@@ -127,12 +231,6 @@ namespace KOMacro
             InitSpeedComboboxes();
 
             CreateTimerSkills();
-            SetTimerSkill(timerSkills[0], 1000);
-            SetTimerSkill(timerSkills[1], 2000);
-            SetTimerSkill(timerSkills[2], 1000);
-            SetTimerSkill(timerSkills[3], 500);
-            SetTimerSkill(timerSkills[4], 3000);
-            SetTimerSkill(timerSkills[5], 5000);
         }
 
         public void InitSpeedComboboxes()
@@ -172,7 +270,7 @@ namespace KOMacro
             for (int ii = 0; ii < 7; ii++)
             {
                 Timer timerSkill = new Timer();
-                timerSkill.Tag = "Skill " + ii;
+                timerSkill.Tag = "Skill " + (ii + 1);
                 timerSkill.Tick += delegate {
                     Console.WriteLine(timerSkill.Tag + " used! (" + timerSkill.Interval + ")");
                 };
@@ -186,7 +284,7 @@ namespace KOMacro
                 timer.Dispose();
         }
 
-        public void SetTimerSkill(Timer timer, int miliseconds)
+        public void StartTimerSkill(Timer timer, int miliseconds)
         {
             Timer temp = timer;
 
@@ -233,48 +331,16 @@ namespace KOMacro
                     MiliSpeedSkill04 = amount;
                     break;
                 case 5:
-                    SecondSpeedSkill05 = amount / 1000;
+                    SecondSpeedSkill05 = amount * 1000;
                     break;
                 case 6:
-                    SecondSpeedSkill06 = amount / 1000;
+                    SecondSpeedSkill06 = amount * 1000;
                     break;
                 case 7:
-                    SecondSpeedSkill07 = amount / 1000;
+                    SecondSpeedSkill07 = amount * 1000;
                     break;
                 default:
                     break;
-            }
-        }
-
-        private void btnStartSkills_Click(object sender, EventArgs e)
-        {
-            SkillsRunning = !SkillsRunning;
-
-            if (SkillsRunning)
-            {
-                btnStartBasic.Enabled = false;
-                btnStartSkills.Text = "Durdur";
-            }
-            else
-            {
-                btnStartBasic.Enabled = true;
-                btnStartSkills.Text = "Skillerle Başlat";
-            }
-        }
-
-        private void btnStartBasic_Click(object sender, EventArgs e)
-        {
-            ZRRunning = !ZRRunning;
-
-            if (ZRRunning)
-            {
-                btnStartSkills.Enabled = false;
-                btnStartBasic.Text = "Durdur";
-            }
-            else
-            {
-                btnStartSkills.Enabled = true;
-                btnStartBasic.Text = "Z-R Skillsiz Başlat";
             }
         }
     }
