@@ -87,6 +87,7 @@
             // 
             // edtSkill01
             // 
+            this.edtSkill01.Enabled = false;
             this.edtSkill01.Location = new System.Drawing.Point(56, 29);
             this.edtSkill01.Name = "edtSkill01";
             this.edtSkill01.Size = new System.Drawing.Size(42, 20);
@@ -189,6 +190,7 @@
             // 
             // edtSkill02
             // 
+            this.edtSkill02.Enabled = false;
             this.edtSkill02.Location = new System.Drawing.Point(56, 55);
             this.edtSkill02.Name = "edtSkill02";
             this.edtSkill02.Size = new System.Drawing.Size(42, 20);
@@ -237,6 +239,7 @@
             // 
             // edtSkill03
             // 
+            this.edtSkill03.Enabled = false;
             this.edtSkill03.Location = new System.Drawing.Point(56, 81);
             this.edtSkill03.Name = "edtSkill03";
             this.edtSkill03.Size = new System.Drawing.Size(42, 20);
@@ -285,6 +288,7 @@
             // 
             // edtSkill04
             // 
+            this.edtSkill04.Enabled = false;
             this.edtSkill04.Location = new System.Drawing.Point(56, 107);
             this.edtSkill04.Name = "edtSkill04";
             this.edtSkill04.Size = new System.Drawing.Size(42, 20);
@@ -333,6 +337,7 @@
             // 
             // edtSkill05
             // 
+            this.edtSkill05.Enabled = false;
             this.edtSkill05.Location = new System.Drawing.Point(56, 162);
             this.edtSkill05.Name = "edtSkill05";
             this.edtSkill05.Size = new System.Drawing.Size(42, 20);
@@ -381,6 +386,7 @@
             // 
             // edtSkill06
             // 
+            this.edtSkill06.Enabled = false;
             this.edtSkill06.Location = new System.Drawing.Point(56, 188);
             this.edtSkill06.Name = "edtSkill06";
             this.edtSkill06.Size = new System.Drawing.Size(42, 20);
@@ -483,6 +489,7 @@
             // 
             // edtSkill07
             // 
+            this.edtSkill07.Enabled = false;
             this.edtSkill07.Location = new System.Drawing.Point(56, 214);
             this.edtSkill07.Name = "edtSkill07";
             this.edtSkill07.Size = new System.Drawing.Size(42, 20);
