@@ -19,6 +19,7 @@ namespace KOMacro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MainForm = new frmKOmacro();
+            MainForm.TopMost = true;
             Application.Run(MainForm);
         }
     }
