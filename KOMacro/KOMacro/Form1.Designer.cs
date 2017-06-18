@@ -64,6 +64,8 @@
             this.cmbSecondSpeed05 = new System.Windows.Forms.ComboBox();
             this.cmbSecondSpeed06 = new System.Windows.Forms.ComboBox();
             this.cmbSecondSpeed07 = new System.Windows.Forms.ComboBox();
+            this.txtShortCut01 = new System.Windows.Forms.Label();
+            this.txtShortCut02 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtSkill01
@@ -413,11 +415,31 @@
             this.cmbSecondSpeed07.TabIndex = 45;
             this.cmbSecondSpeed07.SelectedIndexChanged += new System.EventHandler(this.cmbSecondSpeed07_SelectedIndexChanged);
             // 
+            // txtShortCut01
+            // 
+            this.txtShortCut01.Location = new System.Drawing.Point(35, 293);
+            this.txtShortCut01.Name = "txtShortCut01";
+            this.txtShortCut01.Size = new System.Drawing.Size(75, 29);
+            this.txtShortCut01.TabIndex = 46;
+            this.txtShortCut01.Text = "Kısayol: Caps-Lock";
+            this.txtShortCut01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtShortCut02
+            // 
+            this.txtShortCut02.Location = new System.Drawing.Point(122, 293);
+            this.txtShortCut02.Name = "txtShortCut02";
+            this.txtShortCut02.Size = new System.Drawing.Size(64, 29);
+            this.txtShortCut02.TabIndex = 47;
+            this.txtShortCut02.Text = "Kısayol: Tab";
+            this.txtShortCut02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmKOmacro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(224, 302);
+            this.ClientSize = new System.Drawing.Size(224, 328);
+            this.Controls.Add(this.txtShortCut02);
+            this.Controls.Add(this.txtShortCut01);
             this.Controls.Add(this.cmbSecondSpeed07);
             this.Controls.Add(this.cmbSecondSpeed06);
             this.Controls.Add(this.cmbSecondSpeed05);
@@ -500,6 +522,8 @@
         private System.Windows.Forms.ComboBox cmbSecondSpeed05;
         private System.Windows.Forms.ComboBox cmbSecondSpeed06;
         private System.Windows.Forms.ComboBox cmbSecondSpeed07;
+        private System.Windows.Forms.Label txtShortCut01;
+        private System.Windows.Forms.Label txtShortCut02;
     }
 }
 
