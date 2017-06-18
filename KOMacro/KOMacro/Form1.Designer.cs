@@ -94,7 +94,6 @@
             this.edtSkill01.TabIndex = 1;
             this.edtSkill01.Text = "1";
             this.edtSkill01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSkill01.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSkill01_KeyPress);
             // 
             // txtNumber
             // 
@@ -122,7 +121,6 @@
             this.edtMiliSpeedSkill01.TabIndex = 3;
             this.edtMiliSpeedSkill01.Text = "100";
             this.edtMiliSpeedSkill01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtMiliSpeedSkill01.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtMiliSpeedSkill01_KeyPress);
             // 
             // chcSkill01Active
             // 
@@ -186,7 +184,6 @@
             this.edtMiliSpeedSkill02.TabIndex = 10;
             this.edtMiliSpeedSkill02.Text = "100";
             this.edtMiliSpeedSkill02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtMiliSpeedSkill02.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtMiliSpeedSkill02_KeyPress);
             // 
             // edtSkill02
             // 
@@ -197,7 +194,6 @@
             this.edtSkill02.TabIndex = 9;
             this.edtSkill02.Text = "2";
             this.edtSkill02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSkill02.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSkill02_KeyPress);
             // 
             // txtSkill02
             // 
@@ -235,7 +231,6 @@
             this.edtMiliSpeedSkill03.TabIndex = 15;
             this.edtMiliSpeedSkill03.Text = "100";
             this.edtMiliSpeedSkill03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtMiliSpeedSkill03.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtMiliSpeedSkill03_KeyPress);
             // 
             // edtSkill03
             // 
@@ -246,7 +241,6 @@
             this.edtSkill03.TabIndex = 14;
             this.edtSkill03.Text = "3";
             this.edtSkill03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSkill03.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSkill03_KeyPress);
             // 
             // txtSkill03
             // 
@@ -284,7 +278,6 @@
             this.edtMiliSpeedSkill04.TabIndex = 20;
             this.edtMiliSpeedSkill04.Text = "100";
             this.edtMiliSpeedSkill04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtMiliSpeedSkill04.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtMiliSpeedSkill04_KeyPress);
             // 
             // edtSkill04
             // 
@@ -295,7 +288,6 @@
             this.edtSkill04.TabIndex = 19;
             this.edtSkill04.Text = "4";
             this.edtSkill04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSkill04.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSkill04_KeyPress);
             // 
             // txtSkill04
             // 
@@ -333,7 +325,6 @@
             this.edtSecondSpeedSkill05.TabIndex = 25;
             this.edtSecondSpeedSkill05.Text = "10";
             this.edtSecondSpeedSkill05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSecondSpeedSkill05.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSecondSpeedSkill05_KeyPress);
             // 
             // edtSkill05
             // 
@@ -344,7 +335,6 @@
             this.edtSkill05.TabIndex = 24;
             this.edtSkill05.Text = "5";
             this.edtSkill05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSkill05.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSkill05_KeyPress);
             // 
             // txtSkill05
             // 
@@ -382,7 +372,6 @@
             this.edtSecondSpeedSkill06.TabIndex = 30;
             this.edtSecondSpeedSkill06.Text = "10";
             this.edtSecondSpeedSkill06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSecondSpeedSkill06.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSecondSpeedSkill06_KeyPress);
             // 
             // edtSkill06
             // 
@@ -393,7 +382,6 @@
             this.edtSkill06.TabIndex = 29;
             this.edtSkill06.Text = "6";
             this.edtSkill06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSkill06.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSkill06_KeyPress);
             // 
             // txtSkill06
             // 
@@ -485,7 +473,6 @@
             this.edtSecondSpeedSkill07.TabIndex = 35;
             this.edtSecondSpeedSkill07.Text = "0.5";
             this.edtSecondSpeedSkill07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSecondSpeedSkill07.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSecondSpeedSkill07_KeyPress);
             // 
             // edtSkill07
             // 
@@ -496,7 +483,6 @@
             this.edtSkill07.TabIndex = 34;
             this.edtSkill07.Text = "7";
             this.edtSkill07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edtSkill07.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.edtSkill07_KeyPress);
             // 
             // txtSkill07
             // 
