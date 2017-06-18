@@ -19,40 +19,12 @@ namespace KOMacro
         #region Button Click Events
         private void btnStartSkills_Click(object sender, EventArgs e)
         {
-            SkillsRunning = !SkillsRunning;
-
-            if (SkillsRunning)
-            {
-                StartAllSkills();
-                btnStartBasic.Enabled = false;
-                btnStartSkills.Text = "Durdur";
-            }
-            else
-            {
-                StopAllSkills();
-                btnStartBasic.Enabled = true;
-                btnStartSkills.Text = "Skillerle Başlat";
-            }
+            StartSkills();
         }
 
         private void btnStartBasic_Click(object sender, EventArgs e)
         {
-            ZRRunning = !ZRRunning;
-
-            if (ZRRunning)
-            {
-                zrSkill.Start();
-                DisableAllComponents();
-                btnStartSkills.Enabled = false;
-                btnStartBasic.Text = "Durdur";
-            }
-            else
-            {
-                zrSkill.Stop();
-                EnableAllComponents();
-                btnStartSkills.Enabled = true;
-                btnStartBasic.Text = "Z-R Skillsiz Başlat";
-            }
+            StartBasic();
         }
         #endregion
 
@@ -279,6 +251,64 @@ namespace KOMacro
             chcSkill05Active.Enabled = true;
             chcSkill06Active.Enabled = true;
             chcSkill07Active.Enabled = true;
+        }
+
+        public void StartSkills()
+        {
+            SkillsRunning = !SkillsRunning;
+
+            if (SkillsRunning)
+            {
+                StartAllSkills();
+                btnStartBasic.Enabled = false;
+                btnStartSkills.Text = "Durdur";
+            }
+            else
+            {
+                StopAllSkills();
+                btnStartBasic.Enabled = true;
+                btnStartSkills.Text = "Skillerle Başlat";
+            }
+        }
+
+        public void StartBasic()
+        {
+            ZRRunning = !ZRRunning;
+
+            if (ZRRunning)
+            {
+                zrSkill.Start();
+                DisableAllComponents();
+                btnStartSkills.Enabled = false;
+                btnStartBasic.Text = "Durdur";
+            }
+            else
+            {
+                zrSkill.Stop();
+                EnableAllComponents();
+                btnStartSkills.Enabled = true;
+                btnStartBasic.Text = "Z-R Skillsiz Başlat";
+            }
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.CapsLock))
+            {
+                StartSkills();
+                return true;
+            }
+
+            else if (keyData == (Keys.Tab))
+            {
+                StartBasic();
+            }
+
+            else if (keyData == (Keys.Control | Keys.Space))
+            {
+                MessageBox.Show("Show-disable background app!");
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         /// <summary>Returns true if the current application has focus, false otherwise</summary>
