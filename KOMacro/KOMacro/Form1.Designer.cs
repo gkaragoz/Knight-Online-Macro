@@ -69,6 +69,7 @@
             this.txtShortCut01 = new System.Windows.Forms.Label();
             this.txtShortCut02 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.txtInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtSkill01
@@ -443,11 +444,21 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
             // 
+            // txtInfo
+            // 
+            this.txtInfo.Location = new System.Drawing.Point(12, 326);
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(200, 36);
+            this.txtInfo.TabIndex = 48;
+            this.txtInfo.Text = "CTRL + Space ile programı her zaman alta alabilir, geri getirebilirsin.";
+            this.txtInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmKOmacro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(224, 328);
+            this.ClientSize = new System.Drawing.Size(224, 371);
+            this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.txtShortCut02);
             this.Controls.Add(this.txtShortCut01);
             this.Controls.Add(this.cmbSecondSpeed07);
@@ -538,6 +549,7 @@
         private System.Windows.Forms.Label txtShortCut01;
         private System.Windows.Forms.Label txtShortCut02;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Label txtInfo;
     }
 }
 
