@@ -71,87 +71,51 @@ namespace KOMacro
         }
         #endregion
 
-        #region TextBoxes set Input Only Number Events
-        private void edtSkill01_KeyPress(object sender, KeyPressEventArgs e)
+        public bool IsItNumber(KeyPressEventArgs e)
         {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtSkill02_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtSkill03_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtSkill04_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtSkill05_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtSkill06_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtSkill07_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtMiliSpeedSkill01_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtMiliSpeedSkill02_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtMiliSpeedSkill03_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtMiliSpeedSkill04_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtSecondSpeedSkill05_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtSecondSpeedSkill06_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-
-        private void edtSecondSpeedSkill07_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputOnlyNumbers(e);
-        }
-        #endregion
-
-        public void InputOnlyNumbers(KeyPressEventArgs e)
-        {
+            bool error = true;
             char ch = e.KeyChar;
+
+            Console.WriteLine(ch);
 
             if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
             {
                 e.Handled = true;
+
+                error = false;
+                return error;
             }
+            return error;
         }
 
+        public void SetSpeed(int skillNumber, float amount)
+        {
+            switch (skillNumber)
+            {
+                case 1:
+                    MiliSpeedSkill01 = amount;
+                    break;
+                case 2:
+                    MiliSpeedSkill02 = amount;
+                    break;
+                case 3:
+                    MiliSpeedSkill03 = amount;
+                    break;
+                case 4:
+                    MiliSpeedSkill04 = amount;
+                    break;
+                case 5:
+                    SecondSpeedSkill05 = amount / 1000;
+                    break;
+                case 6:
+                    SecondSpeedSkill06 = amount / 1000;
+                    break;
+                case 7:
+                    SecondSpeedSkill07 = amount / 1000;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
