@@ -57,10 +57,10 @@ namespace KOMacro
             {
                 StopTimerSkill(timerSkills[0]);
             }
-            else if (SkillsRunning) //Start skill.
+            else if (SkillsRunning) //Set skill.
             {
                 var milisecond = (int)Convert.ToDouble(MiliSpeedSkill01.ToString());
-                StartTimerSkill(timerSkills[0], milisecond);
+                SetTimerSkill(timerSkills[0], milisecond);
             }
         }
 
@@ -72,10 +72,10 @@ namespace KOMacro
             {
                 StopTimerSkill(timerSkills[1]);
             }
-            else if (SkillsRunning) //Start skill.
+            else if (SkillsRunning) //Set skill.
             {
                 var milisecond = (int)Convert.ToDouble(MiliSpeedSkill02.ToString());
-                StartTimerSkill(timerSkills[1], milisecond);
+                SetTimerSkill(timerSkills[1], milisecond);
             }
         }
 
@@ -87,10 +87,10 @@ namespace KOMacro
             {
                 StopTimerSkill(timerSkills[2]);
             }
-            else if (SkillsRunning) //Start skill.
+            else if (SkillsRunning) //Set skill.
             {
                 var milisecond = (int)Convert.ToDouble(MiliSpeedSkill03.ToString());
-                StartTimerSkill(timerSkills[2], milisecond);
+                SetTimerSkill(timerSkills[2], milisecond);
             }
         }
 
@@ -102,10 +102,10 @@ namespace KOMacro
             {
                 StopTimerSkill(timerSkills[3]);
             }
-            else if (SkillsRunning) //Start skill.
+            else if (SkillsRunning) //Set skill.
             {
                 var milisecond = (int)Convert.ToDouble(MiliSpeedSkill04.ToString());
-                StartTimerSkill(timerSkills[3], milisecond);
+                SetTimerSkill(timerSkills[3], milisecond);
             }
         }
 
@@ -117,10 +117,10 @@ namespace KOMacro
             {
                 StopTimerSkill(timerSkills[4]);
             }
-            else if (SkillsRunning) //Start skill.
+            else if (SkillsRunning) //Set skill.
             {
                 var milisecond = (int)Convert.ToDouble(SecondSpeedSkill05.ToString());
-                StartTimerSkill(timerSkills[4], milisecond);
+                SetTimerSkill(timerSkills[4], milisecond);
             }
         }
 
@@ -132,10 +132,10 @@ namespace KOMacro
             {
                 StopTimerSkill(timerSkills[5]);
             }
-            else if (SkillsRunning) //Start skill.
+            else if (SkillsRunning) //Set skill.
             {
                 var milisecond = (int)Convert.ToDouble(SecondSpeedSkill06.ToString());
-                StartTimerSkill(timerSkills[5], milisecond);
+                SetTimerSkill(timerSkills[5], milisecond);
             }
         }
 
@@ -147,10 +147,10 @@ namespace KOMacro
             {
                 StopTimerSkill(timerSkills[6]);
             }
-            else if (SkillsRunning) //Start skill.
+            else if (SkillsRunning) //Set skill.
             {
                 var milisecond = (int)Convert.ToDouble(SecondSpeedSkill07.ToString());
-                StartTimerSkill(timerSkills[6], milisecond);
+                SetTimerSkill(timerSkills[6], milisecond);
             }
         }
         #endregion
@@ -284,7 +284,15 @@ namespace KOMacro
                 timer.Dispose();
         }
 
-        public void StartTimerSkill(Timer timer, int miliseconds)
+        public void StartTimerSkill(Timer timer)
+        {
+            if (timer != null)
+                timer.Dispose();
+
+            timer.Start();
+        }
+
+        public void SetTimerSkill(Timer timer, int miliseconds)
         {
             Timer temp = timer;
 
