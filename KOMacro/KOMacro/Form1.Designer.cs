@@ -476,6 +476,7 @@
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.edtSkill01);
             this.Controls.Add(this.txtSkill01);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmKOmacro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KOmacro";
