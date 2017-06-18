@@ -132,6 +132,7 @@ namespace KOMacro
         public static frmKOmacro instance;
         public bool SkillsRunning = false;
         public bool ZRRunning = false;
+        public bool ShowBalloonTip = false;
 
         public float MiliSpeedSkill01 = 100f;
         public float MiliSpeedSkill02 = 100f;
@@ -181,7 +182,7 @@ namespace KOMacro
 
             InitSpeedComboboxes();
 
-            InitHotKeys(); 
+            InitHotKeys();
         }
 
         public void InitHotKeys()
@@ -225,7 +226,15 @@ namespace KOMacro
                 else if (id == HotKey_ControlSpaceID)
                 {
                     if (Program.MainForm.Visible)
+                    {
                         Program.MainForm.Hide();
+
+                        if (ShowBalloonTip == false)
+                        {
+                            notifyIcon1.ShowBalloonTip(5000);
+                            ShowBalloonTip = true;
+                        }
+                    }
                     else
                         Program.MainForm.Show();
                 }
@@ -450,7 +459,14 @@ namespace KOMacro
         private void frmKOmacro_Resize(object sender, EventArgs e)
         {
             if (FormWindowState.Minimized == WindowState)
+            {
                 Hide();
+                if(ShowBalloonTip == false)
+                {
+                    notifyIcon1.ShowBalloonTip(5000);
+                    ShowBalloonTip = true;
+                }
+            }
         }
 
         private void notifyIcon1_DoubleClick(object sender, EventArgs e)

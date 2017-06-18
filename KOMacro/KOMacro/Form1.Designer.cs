@@ -439,6 +439,9 @@
             // 
             // notifyIcon1
             // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipText = "Arkaplanda çalışmaya devam ediyor.";
+            this.notifyIcon1.BalloonTipTitle = "KOmacro 1.0";
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "KOmacro 1.0";
             this.notifyIcon1.Visible = true;
