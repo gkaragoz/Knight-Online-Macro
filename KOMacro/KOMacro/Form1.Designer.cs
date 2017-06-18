@@ -34,35 +34,26 @@
             this.txtSpeedMiliSecond = new System.Windows.Forms.Label();
             this.chcSkill01Active = new System.Windows.Forms.CheckBox();
             this.txtSkillActive = new System.Windows.Forms.Label();
-            this.pnlSkill01Progress = new System.Windows.Forms.Panel();
-            this.txtProgress = new System.Windows.Forms.Label();
-            this.pnlSkill02Progress = new System.Windows.Forms.Panel();
             this.chcSkill02Active = new System.Windows.Forms.CheckBox();
             this.edtSkill02 = new System.Windows.Forms.TextBox();
             this.txtSkill02 = new System.Windows.Forms.Label();
-            this.pnlSkill03Progress = new System.Windows.Forms.Panel();
             this.chcSkill03Active = new System.Windows.Forms.CheckBox();
             this.edtSkill03 = new System.Windows.Forms.TextBox();
             this.txtSkill03 = new System.Windows.Forms.Label();
-            this.pnlSkill04Progress = new System.Windows.Forms.Panel();
             this.chcSkill04Active = new System.Windows.Forms.CheckBox();
             this.edtSkill04 = new System.Windows.Forms.TextBox();
             this.txtSkill04 = new System.Windows.Forms.Label();
-            this.pnlSkill05Progress = new System.Windows.Forms.Panel();
             this.chcSkill05Active = new System.Windows.Forms.CheckBox();
             this.edtSkill05 = new System.Windows.Forms.TextBox();
             this.txtSkill05 = new System.Windows.Forms.Label();
-            this.pnlSkill06Progress = new System.Windows.Forms.Panel();
             this.chcSkill06Active = new System.Windows.Forms.CheckBox();
             this.edtSkill06 = new System.Windows.Forms.TextBox();
             this.txtSkill06 = new System.Windows.Forms.Label();
             this.btnStartSkills = new System.Windows.Forms.Button();
             this.btnStartBasic = new System.Windows.Forms.Button();
-            this.txtSecondProgress = new System.Windows.Forms.Label();
             this.txtSecondSkillActive = new System.Windows.Forms.Label();
             this.txtSpeedSecond = new System.Windows.Forms.Label();
             this.txtNumber2 = new System.Windows.Forms.Label();
-            this.pnlSkill07Progress = new System.Windows.Forms.Panel();
             this.chcSkill07Active = new System.Windows.Forms.CheckBox();
             this.edtSkill07 = new System.Windows.Forms.TextBox();
             this.txtSkill07 = new System.Windows.Forms.Label();
@@ -132,31 +123,6 @@
             this.txtSkillActive.Text = "Aktif";
             this.txtSkillActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlSkill01Progress
-            // 
-            this.pnlSkill01Progress.BackColor = System.Drawing.Color.Crimson;
-            this.pnlSkill01Progress.Location = new System.Drawing.Point(230, 29);
-            this.pnlSkill01Progress.Name = "pnlSkill01Progress";
-            this.pnlSkill01Progress.Size = new System.Drawing.Size(42, 20);
-            this.pnlSkill01Progress.TabIndex = 7;
-            // 
-            // txtProgress
-            // 
-            this.txtProgress.Location = new System.Drawing.Point(230, 13);
-            this.txtProgress.Name = "txtProgress";
-            this.txtProgress.Size = new System.Drawing.Size(42, 13);
-            this.txtProgress.TabIndex = 8;
-            this.txtProgress.Text = "İşliyor";
-            this.txtProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlSkill02Progress
-            // 
-            this.pnlSkill02Progress.BackColor = System.Drawing.Color.Crimson;
-            this.pnlSkill02Progress.Location = new System.Drawing.Point(230, 55);
-            this.pnlSkill02Progress.Name = "pnlSkill02Progress";
-            this.pnlSkill02Progress.Size = new System.Drawing.Size(42, 20);
-            this.pnlSkill02Progress.TabIndex = 12;
-            // 
             // chcSkill02Active
             // 
             this.chcSkill02Active.AutoSize = true;
@@ -186,14 +152,6 @@
             this.txtSkill02.TabIndex = 8;
             this.txtSkill02.Text = "Skill 2:";
             this.txtSkill02.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlSkill03Progress
-            // 
-            this.pnlSkill03Progress.BackColor = System.Drawing.Color.Crimson;
-            this.pnlSkill03Progress.Location = new System.Drawing.Point(230, 81);
-            this.pnlSkill03Progress.Name = "pnlSkill03Progress";
-            this.pnlSkill03Progress.Size = new System.Drawing.Size(42, 20);
-            this.pnlSkill03Progress.TabIndex = 17;
             // 
             // chcSkill03Active
             // 
@@ -225,14 +183,6 @@
             this.txtSkill03.Text = "Skill 3:";
             this.txtSkill03.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnlSkill04Progress
-            // 
-            this.pnlSkill04Progress.BackColor = System.Drawing.Color.Crimson;
-            this.pnlSkill04Progress.Location = new System.Drawing.Point(230, 107);
-            this.pnlSkill04Progress.Name = "pnlSkill04Progress";
-            this.pnlSkill04Progress.Size = new System.Drawing.Size(42, 20);
-            this.pnlSkill04Progress.TabIndex = 22;
-            // 
             // chcSkill04Active
             // 
             this.chcSkill04Active.AutoSize = true;
@@ -263,14 +213,6 @@
             this.txtSkill04.Text = "Skill 4:";
             this.txtSkill04.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnlSkill05Progress
-            // 
-            this.pnlSkill05Progress.BackColor = System.Drawing.Color.Crimson;
-            this.pnlSkill05Progress.Location = new System.Drawing.Point(230, 162);
-            this.pnlSkill05Progress.Name = "pnlSkill05Progress";
-            this.pnlSkill05Progress.Size = new System.Drawing.Size(42, 20);
-            this.pnlSkill05Progress.TabIndex = 27;
-            // 
             // chcSkill05Active
             // 
             this.chcSkill05Active.AutoSize = true;
@@ -300,14 +242,6 @@
             this.txtSkill05.TabIndex = 23;
             this.txtSkill05.Text = "HP Pot:";
             this.txtSkill05.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlSkill06Progress
-            // 
-            this.pnlSkill06Progress.BackColor = System.Drawing.Color.Crimson;
-            this.pnlSkill06Progress.Location = new System.Drawing.Point(230, 188);
-            this.pnlSkill06Progress.Name = "pnlSkill06Progress";
-            this.pnlSkill06Progress.Size = new System.Drawing.Size(42, 20);
-            this.pnlSkill06Progress.TabIndex = 32;
             // 
             // chcSkill06Active
             // 
@@ -341,7 +275,7 @@
             // 
             // btnStartSkills
             // 
-            this.btnStartSkills.Location = new System.Drawing.Point(56, 250);
+            this.btnStartSkills.Location = new System.Drawing.Point(35, 250);
             this.btnStartSkills.Name = "btnStartSkills";
             this.btnStartSkills.Size = new System.Drawing.Size(75, 40);
             this.btnStartSkills.TabIndex = 33;
@@ -351,22 +285,13 @@
             // 
             // btnStartBasic
             // 
-            this.btnStartBasic.Location = new System.Drawing.Point(137, 250);
+            this.btnStartBasic.Location = new System.Drawing.Point(116, 250);
             this.btnStartBasic.Name = "btnStartBasic";
             this.btnStartBasic.Size = new System.Drawing.Size(75, 40);
             this.btnStartBasic.TabIndex = 34;
             this.btnStartBasic.Text = "Z-R Skillsiz Başlat";
             this.btnStartBasic.UseVisualStyleBackColor = true;
             this.btnStartBasic.Click += new System.EventHandler(this.btnStartBasic_Click);
-            // 
-            // txtSecondProgress
-            // 
-            this.txtSecondProgress.Location = new System.Drawing.Point(230, 146);
-            this.txtSecondProgress.Name = "txtSecondProgress";
-            this.txtSecondProgress.Size = new System.Drawing.Size(42, 13);
-            this.txtSecondProgress.TabIndex = 38;
-            this.txtSecondProgress.Text = "İşliyor";
-            this.txtSecondProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSecondSkillActive
             // 
@@ -394,14 +319,6 @@
             this.txtNumber2.TabIndex = 35;
             this.txtNumber2.Text = "Tuş";
             this.txtNumber2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlSkill07Progress
-            // 
-            this.pnlSkill07Progress.BackColor = System.Drawing.Color.Crimson;
-            this.pnlSkill07Progress.Location = new System.Drawing.Point(230, 214);
-            this.pnlSkill07Progress.Name = "pnlSkill07Progress";
-            this.pnlSkill07Progress.Size = new System.Drawing.Size(42, 20);
-            this.pnlSkill07Progress.TabIndex = 37;
             // 
             // chcSkill07Active
             // 
@@ -500,7 +417,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 302);
+            this.ClientSize = new System.Drawing.Size(224, 302);
             this.Controls.Add(this.cmbSecondSpeed07);
             this.Controls.Add(this.cmbSecondSpeed06);
             this.Controls.Add(this.cmbSecondSpeed05);
@@ -508,8 +425,6 @@
             this.Controls.Add(this.cmbMiliSpeed03);
             this.Controls.Add(this.cmbMiliSpeed02);
             this.Controls.Add(this.cmbMiliSpeed01);
-            this.Controls.Add(this.pnlSkill07Progress);
-            this.Controls.Add(this.txtSecondProgress);
             this.Controls.Add(this.chcSkill07Active);
             this.Controls.Add(this.txtSecondSkillActive);
             this.Controls.Add(this.edtSkill07);
@@ -518,26 +433,19 @@
             this.Controls.Add(this.txtNumber2);
             this.Controls.Add(this.btnStartBasic);
             this.Controls.Add(this.btnStartSkills);
-            this.Controls.Add(this.pnlSkill06Progress);
             this.Controls.Add(this.chcSkill06Active);
-            this.Controls.Add(this.pnlSkill05Progress);
             this.Controls.Add(this.chcSkill05Active);
             this.Controls.Add(this.edtSkill06);
-            this.Controls.Add(this.pnlSkill04Progress);
             this.Controls.Add(this.txtSkill06);
             this.Controls.Add(this.chcSkill04Active);
             this.Controls.Add(this.edtSkill05);
-            this.Controls.Add(this.pnlSkill03Progress);
             this.Controls.Add(this.txtSkill05);
             this.Controls.Add(this.chcSkill03Active);
             this.Controls.Add(this.edtSkill04);
-            this.Controls.Add(this.pnlSkill02Progress);
             this.Controls.Add(this.txtSkill04);
-            this.Controls.Add(this.txtProgress);
             this.Controls.Add(this.edtSkill03);
             this.Controls.Add(this.chcSkill02Active);
             this.Controls.Add(this.txtSkill03);
-            this.Controls.Add(this.pnlSkill01Progress);
             this.Controls.Add(this.edtSkill02);
             this.Controls.Add(this.txtSkillActive);
             this.Controls.Add(this.txtSkill02);
@@ -562,35 +470,26 @@
         private System.Windows.Forms.Label txtSpeedMiliSecond;
         private System.Windows.Forms.CheckBox chcSkill01Active;
         private System.Windows.Forms.Label txtSkillActive;
-        private System.Windows.Forms.Panel pnlSkill01Progress;
-        private System.Windows.Forms.Label txtProgress;
-        private System.Windows.Forms.Panel pnlSkill02Progress;
         private System.Windows.Forms.CheckBox chcSkill02Active;
         private System.Windows.Forms.TextBox edtSkill02;
         private System.Windows.Forms.Label txtSkill02;
-        private System.Windows.Forms.Panel pnlSkill03Progress;
         private System.Windows.Forms.CheckBox chcSkill03Active;
         private System.Windows.Forms.TextBox edtSkill03;
         private System.Windows.Forms.Label txtSkill03;
-        private System.Windows.Forms.Panel pnlSkill04Progress;
         private System.Windows.Forms.CheckBox chcSkill04Active;
         private System.Windows.Forms.TextBox edtSkill04;
         private System.Windows.Forms.Label txtSkill04;
-        private System.Windows.Forms.Panel pnlSkill05Progress;
         private System.Windows.Forms.CheckBox chcSkill05Active;
         private System.Windows.Forms.TextBox edtSkill05;
         private System.Windows.Forms.Label txtSkill05;
-        private System.Windows.Forms.Panel pnlSkill06Progress;
         private System.Windows.Forms.CheckBox chcSkill06Active;
         private System.Windows.Forms.TextBox edtSkill06;
         private System.Windows.Forms.Label txtSkill06;
         private System.Windows.Forms.Button btnStartSkills;
         private System.Windows.Forms.Button btnStartBasic;
-        private System.Windows.Forms.Label txtSecondProgress;
         private System.Windows.Forms.Label txtSecondSkillActive;
         private System.Windows.Forms.Label txtSpeedSecond;
         private System.Windows.Forms.Label txtNumber2;
-        private System.Windows.Forms.Panel pnlSkill07Progress;
         private System.Windows.Forms.CheckBox chcSkill07Active;
         private System.Windows.Forms.TextBox edtSkill07;
         private System.Windows.Forms.Label txtSkill07;

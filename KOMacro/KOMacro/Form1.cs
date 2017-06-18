@@ -68,14 +68,6 @@ namespace KOMacro
                 else
                     StopSkill();
             }
-
-            //public void PaintProgress()
-            //{
-            //    if (TimerActive())
-            //        panel.BackColor = Color.SpringGreen;
-            //    else
-            //        panel.BackColor = Color.Crimson;
-            //}
         }
 
         #region Events
