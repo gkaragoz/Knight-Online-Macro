@@ -54,14 +54,9 @@ namespace KOMacro
             Skill01Active = !Skill01Active;
 
             if (SkillsRunning && !Skill01Active) //Stop skill.
-            {
                 StopTimerSkill(timerSkills[0]);
-            }
-            else if (SkillsRunning) //Set skill.
-            {
-                var milisecond = (int)Convert.ToDouble(MiliSpeedSkill01.ToString());
-                SetTimerSkill(timerSkills[0], milisecond);
-            }
+            else if (SkillsRunning) //Start skill.
+                StartTimerSkill(timerSkills[0]);                
         }
 
         private void chcSkill02Active_CheckedChanged(object sender, EventArgs e)
@@ -69,14 +64,9 @@ namespace KOMacro
             Skill02Active = !Skill02Active;
 
             if (SkillsRunning && !Skill02Active) //Stop skill.
-            {
                 StopTimerSkill(timerSkills[1]);
-            }
-            else if (SkillsRunning) //Set skill.
-            {
-                var milisecond = (int)Convert.ToDouble(MiliSpeedSkill02.ToString());
-                SetTimerSkill(timerSkills[1], milisecond);
-            }
+            else if (SkillsRunning) //Start skill.
+                StartTimerSkill(timerSkills[1]);
         }
 
         private void chcSkill03Active_CheckedChanged(object sender, EventArgs e)
@@ -84,14 +74,9 @@ namespace KOMacro
             Skill03Active = !Skill03Active;
 
             if (SkillsRunning && !Skill03Active) //Stop skill.
-            {
                 StopTimerSkill(timerSkills[2]);
-            }
-            else if (SkillsRunning) //Set skill.
-            {
-                var milisecond = (int)Convert.ToDouble(MiliSpeedSkill03.ToString());
-                SetTimerSkill(timerSkills[2], milisecond);
-            }
+            else if (SkillsRunning) //Start skill.
+                StartTimerSkill(timerSkills[2]);
         }
 
         private void chcSkill04Active_CheckedChanged(object sender, EventArgs e)
@@ -99,14 +84,9 @@ namespace KOMacro
             Skill04Active = !Skill04Active;
 
             if (SkillsRunning && !Skill04Active) //Stop skill.
-            {
                 StopTimerSkill(timerSkills[3]);
-            }
-            else if (SkillsRunning) //Set skill.
-            {
-                var milisecond = (int)Convert.ToDouble(MiliSpeedSkill04.ToString());
-                SetTimerSkill(timerSkills[3], milisecond);
-            }
+            else if (SkillsRunning) //Start skill.
+                StartTimerSkill(timerSkills[3]);
         }
 
         private void chcSkill05Active_CheckedChanged(object sender, EventArgs e)
@@ -114,14 +94,9 @@ namespace KOMacro
             Skill05Active = !Skill05Active;
 
             if (SkillsRunning && !Skill05Active) //Stop skill.
-            {
                 StopTimerSkill(timerSkills[4]);
-            }
-            else if (SkillsRunning) //Set skill.
-            {
-                var milisecond = (int)Convert.ToDouble(SecondSpeedSkill05.ToString());
-                SetTimerSkill(timerSkills[4], milisecond);
-            }
+            else if (SkillsRunning) //Start skill.
+                StartTimerSkill(timerSkills[4]);
         }
 
         private void chcSkill06Active_CheckedChanged(object sender, EventArgs e)
@@ -129,14 +104,9 @@ namespace KOMacro
             Skill06Active = !Skill06Active;
 
             if (SkillsRunning && !Skill06Active) //Stop skill.
-            {
                 StopTimerSkill(timerSkills[5]);
-            }
-            else if (SkillsRunning) //Set skill.
-            {
-                var milisecond = (int)Convert.ToDouble(SecondSpeedSkill06.ToString());
-                SetTimerSkill(timerSkills[5], milisecond);
-            }
+            else if (SkillsRunning) //Start skill.
+                StartTimerSkill(timerSkills[5]);
         }
 
         private void chcSkill07Active_CheckedChanged(object sender, EventArgs e)
@@ -144,14 +114,9 @@ namespace KOMacro
             Skill07Active = !Skill07Active;
 
             if (SkillsRunning && !Skill07Active) //Stop skill.
-            {
                 StopTimerSkill(timerSkills[6]);
-            }
-            else if (SkillsRunning) //Set skill.
-            {
-                var milisecond = (int)Convert.ToDouble(SecondSpeedSkill07.ToString());
-                SetTimerSkill(timerSkills[6], milisecond);
-            }
+            else if (SkillsRunning) //Start skill.
+                StartTimerSkill(timerSkills[6]);
         }
         #endregion
 
@@ -228,9 +193,10 @@ namespace KOMacro
         public frmKOmacro()
         {
             InitializeComponent();
-            InitSpeedComboboxes();
 
             CreateTimerSkills();
+
+            InitSpeedComboboxes();
         }
 
         public void InitSpeedComboboxes()
@@ -301,6 +267,9 @@ namespace KOMacro
 
             timer = temp;
             timer.Interval = miliseconds;
+
+            if (SkillsRunning)
+                timer.Start();
         }
         #endregion
 
@@ -327,24 +296,31 @@ namespace KOMacro
             {
                 case 1:
                     MiliSpeedSkill01 = amount;
+                    SetTimerSkill(timerSkills[0], (int)Convert.ToDouble(MiliSpeedSkill01.ToString()));
                     break;
                 case 2:
                     MiliSpeedSkill02 = amount;
+                    SetTimerSkill(timerSkills[1], (int)Convert.ToDouble(MiliSpeedSkill02.ToString()));
                     break;
                 case 3:
                     MiliSpeedSkill03 = amount;
+                    SetTimerSkill(timerSkills[2], (int)Convert.ToDouble(MiliSpeedSkill03.ToString()));
                     break;
                 case 4:
                     MiliSpeedSkill04 = amount;
+                    SetTimerSkill(timerSkills[3], (int)Convert.ToDouble(MiliSpeedSkill04.ToString()));
                     break;
                 case 5:
                     SecondSpeedSkill05 = amount * 1000;
+                    SetTimerSkill(timerSkills[4], (int)Convert.ToDouble(SecondSpeedSkill05.ToString()));
                     break;
                 case 6:
                     SecondSpeedSkill06 = amount * 1000;
+                    SetTimerSkill(timerSkills[5], (int)Convert.ToDouble(SecondSpeedSkill06.ToString()));
                     break;
                 case 7:
                     SecondSpeedSkill07 = amount * 1000;
+                    SetTimerSkill(timerSkills[6], (int)Convert.ToDouble(SecondSpeedSkill07.ToString()));
                     break;
                 default:
                     break;
