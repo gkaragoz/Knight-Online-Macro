@@ -12,107 +12,6 @@ namespace KOMacro
 {
     public partial class frmKOmacro : Form
     {
-        public class Skill
-        {
-            private bool skillActive;
-            private Timer timer;
-
-            public Skill(Timer timer)
-            {
-                this.skillActive = false;
-                this.timer = timer;
-            }
-
-            public bool TimerActive()
-            {   if (timer != null)
-                    return timer.Enabled;
-                else
-                    return false;
-            } 
-
-            public void StartSkill()
-            {
-                if (SkillsRunning && skillActive)
-                {
-                    timer.Start();
-                    Console.WriteLine(timer.Tag + " started.");
-                }
-            }
-
-            public void StopSkill()
-            {
-                timer.Stop();
-                Console.WriteLine(timer.Tag + " stopped.");
-            }
-
-            public void SetSkillSpeed(int miliseconds)
-            {
-                Timer temp = timer;
-
-                if (timer != null)
-                    timer.Dispose();
-
-                timer = temp;
-                timer.Interval = miliseconds;
-                StartSkill();
-
-                Console.WriteLine(timer.Tag + " speed set: " + timer.Interval);
-            }
-
-            public void SetSkillActive()
-            {
-                skillActive = !skillActive;
-
-                if (skillActive)
-                    StartSkill();
-                else
-                    StopSkill();
-            }
-        }
-
-        public class ZRSkill
-        {
-            private Timer zTimer;
-            private Timer rTimer;
-            
-            public ZRSkill()
-            {
-                zTimer = new Timer();
-                zTimer.Tag = "zTimer";
-                zTimer.Tick += delegate
-                {
-                    Console.WriteLine("z button pressed. " + zTimer.Interval);
-                };
-                zTimer.Interval = 100;
-
-                rTimer = new Timer();
-                rTimer.Tag = "rTimer";
-                rTimer.Tick += delegate
-                {
-                    Console.WriteLine("r button pressed. " + rTimer.Interval);
-                };
-                rTimer.Interval = 1000;
-            }
-
-            public void Start()
-            {
-                if (zTimer != null && rTimer != null)
-                {
-                    zTimer.Start();
-                    rTimer.Start();
-                }
-            }
-
-            public void Stop()
-            {
-                if (zTimer != null && rTimer != null)
-                {
-                    zTimer.Stop();
-                    rTimer.Stop();
-                }
-            }
-        }
-
         #region Events
 
         #region Button Click Events
@@ -256,8 +155,9 @@ namespace KOMacro
         private List<Skill> skills = new List<Skill>();
         private ZRSkill zrSkill = new ZRSkill();
 
-        public static bool SkillsRunning = false;
-        public static bool ZRRunning = false;
+        public static frmKOmacro instance;
+        public bool SkillsRunning = false;
+        public bool ZRRunning = false;
 
         public float MiliSpeedSkill01 = 100f;
         public float MiliSpeedSkill02 = 100f;
@@ -271,6 +171,9 @@ namespace KOMacro
 
         public frmKOmacro()
         {
+            if (instance == null)
+                instance = this;
+
             InitializeComponent();
 
             CreateTimerSkills();
