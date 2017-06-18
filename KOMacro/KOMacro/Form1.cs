@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -188,7 +190,9 @@ namespace KOMacro
                 Timer timer = new Timer();
                 timer.Tag = "Skill " + (ii + 1);
                 timer.Tick += delegate {
-                    SendKeys.Send((ii + 1).ToString());
+                    if (!ApplicationIsActivated())
+                        SendKeys.Send((ii + 1).ToString());
+
                     //Console.WriteLine(timer.Tag + " used! (" + timer.Interval + ")");
                 };
 
@@ -276,5 +280,28 @@ namespace KOMacro
             chcSkill06Active.Enabled = true;
             chcSkill07Active.Enabled = true;
         }
+
+        /// <summary>Returns true if the current application has focus, false otherwise</summary>
+        public bool ApplicationIsActivated()
+        {
+            var activatedHandle = GetForegroundWindow();
+            if (activatedHandle == IntPtr.Zero)
+            {
+                return false;       // No window is currently activated
+            }
+
+            var procId = Process.GetCurrentProcess().Id;
+            int activeProcId;
+            GetWindowThreadProcessId(activatedHandle, out activeProcId);
+
+            return activeProcId == procId;
+        }
+
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        private static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
     }
 }
