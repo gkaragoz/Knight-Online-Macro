@@ -12,6 +12,66 @@ namespace KOMacro
 {
     public partial class frmKOmacro : Form
     {
+        public class Skill
+        {
+            private bool skillActive;
+            private Timer timer;
+
+            public Skill(Timer timer)
+            {
+                this.timer = timer;
+                this.skillActive = false;
+            }
+
+            private void StopSkill()
+            {
+                if (timer != null)
+                    timer.Dispose();
+
+                skillActive = false;
+
+                Console.WriteLine(timer.Tag + " stopped.");
+            }
+
+            private void StartSkill()
+            {
+                if (timer != null)
+                    timer.Dispose();
+
+                timer.Start();
+                skillActive = true;
+
+                Console.WriteLine(timer.Tag + " started.");
+            }
+
+            public void SetSkillSpeed(int miliseconds)
+            {
+                Timer temp = timer;
+
+                if (timer != null)
+                    timer.Dispose();
+
+                timer = temp;
+                timer.Interval = miliseconds;
+
+                if (skillActive)
+                    timer.Start();
+
+                Console.WriteLine(timer.Tag + " speed set: " + timer.Interval);
+            }
+
+            public void SetSkillActive(bool attack)
+            {
+                skillActive = !skillActive;
+
+                if (skillActive && attack)
+                    StartSkill();
+                else
+                    StopSkill();
+            }
+        }
+
+
         #region Events
 
         #region Button Click Events
@@ -51,134 +111,105 @@ namespace KOMacro
         #region CheckBoxes Checked Events
         private void chcSkill01Active_CheckedChanged(object sender, EventArgs e)
         {
-            Skill01Active = !Skill01Active;
-
-            if (SkillsRunning && !Skill01Active) //Stop skill.
-                StopTimerSkill(timerSkills[0]);
-            else if (SkillsRunning) //Start skill.
-                StartTimerSkill(timerSkills[0]);                
+            skills[0].SetSkillActive(SkillsRunning);
         }
 
         private void chcSkill02Active_CheckedChanged(object sender, EventArgs e)
         {
-            Skill02Active = !Skill02Active;
-
-            if (SkillsRunning && !Skill02Active) //Stop skill.
-                StopTimerSkill(timerSkills[1]);
-            else if (SkillsRunning) //Start skill.
-                StartTimerSkill(timerSkills[1]);
+            skills[1].SetSkillActive(SkillsRunning);
         }
 
         private void chcSkill03Active_CheckedChanged(object sender, EventArgs e)
         {
-            Skill03Active = !Skill03Active;
-
-            if (SkillsRunning && !Skill03Active) //Stop skill.
-                StopTimerSkill(timerSkills[2]);
-            else if (SkillsRunning) //Start skill.
-                StartTimerSkill(timerSkills[2]);
+            skills[2].SetSkillActive(SkillsRunning);
         }
 
         private void chcSkill04Active_CheckedChanged(object sender, EventArgs e)
         {
-            Skill04Active = !Skill04Active;
-
-            if (SkillsRunning && !Skill04Active) //Stop skill.
-                StopTimerSkill(timerSkills[3]);
-            else if (SkillsRunning) //Start skill.
-                StartTimerSkill(timerSkills[3]);
+            skills[3].SetSkillActive(SkillsRunning);
         }
 
         private void chcSkill05Active_CheckedChanged(object sender, EventArgs e)
         {
-            Skill05Active = !Skill05Active;
-
-            if (SkillsRunning && !Skill05Active) //Stop skill.
-                StopTimerSkill(timerSkills[4]);
-            else if (SkillsRunning) //Start skill.
-                StartTimerSkill(timerSkills[4]);
+            skills[4].SetSkillActive(SkillsRunning);
         }
 
         private void chcSkill06Active_CheckedChanged(object sender, EventArgs e)
         {
-            Skill06Active = !Skill06Active;
-
-            if (SkillsRunning && !Skill06Active) //Stop skill.
-                StopTimerSkill(timerSkills[5]);
-            else if (SkillsRunning) //Start skill.
-                StartTimerSkill(timerSkills[5]);
+            skills[5].SetSkillActive(SkillsRunning);
         }
 
         private void chcSkill07Active_CheckedChanged(object sender, EventArgs e)
         {
-            Skill07Active = !Skill07Active;
-
-            if (SkillsRunning && !Skill07Active) //Stop skill.
-                StopTimerSkill(timerSkills[6]);
-            else if (SkillsRunning) //Start skill.
-                StartTimerSkill(timerSkills[6]);
+            skills[6].SetSkillActive(SkillsRunning);
         }
         #endregion
 
         #region ComboBoxes SelectedIndexChanged Events
         private void cmbMiliSpeed01_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float amount = float.Parse(cmbMiliSpeed01.SelectedItem.ToString());
-            SetSpeed(1, amount);
+            string value = cmbMiliSpeed01.SelectedItem.ToString();
+            int milisecond = (int)Convert.ToDouble(value);
+
+            skills[0].SetSkillSpeed(milisecond);
         }
 
         private void cmbMiliSpeed02_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float amount = float.Parse(cmbMiliSpeed02.SelectedItem.ToString());
-            SetSpeed(2, amount);
+            string value = cmbMiliSpeed02.SelectedItem.ToString();
+            int milisecond = (int)Convert.ToDouble(value);
+
+            skills[1].SetSkillSpeed(milisecond);
         }
 
         private void cmbMiliSpeed03_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float amount = float.Parse(cmbMiliSpeed03.SelectedItem.ToString());
-            SetSpeed(3, amount);
+            string value = cmbMiliSpeed03.SelectedItem.ToString();
+            int milisecond = (int)Convert.ToDouble(value);
+
+            skills[2].SetSkillSpeed(milisecond);
         }
 
         private void cmbMiliSpeed04_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float amount = float.Parse(cmbMiliSpeed04.SelectedItem.ToString());
-            SetSpeed(4, amount);
+            string value = cmbMiliSpeed04.SelectedItem.ToString();
+            int milisecond = (int)Convert.ToDouble(value);
+
+            skills[3].SetSkillSpeed(milisecond);
         }
 
         private void cmbSecondSpeed05_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float amount = float.Parse(cmbSecondSpeed05.SelectedItem.ToString());
-            SetSpeed(5, amount);
+            string value = cmbSecondSpeed05.SelectedItem.ToString();
+            int milisecond = (int) (Convert.ToDouble(value) * 1000);
+
+            skills[4].SetSkillSpeed(milisecond);
         }
 
         private void cmbSecondSpeed06_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float amount = float.Parse(cmbSecondSpeed06.SelectedItem.ToString());
-            SetSpeed(6, amount);
+            string value = cmbSecondSpeed06.SelectedItem.ToString();
+            int milisecond = (int) (Convert.ToDouble(value) * 1000);
+
+            skills[5].SetSkillSpeed(milisecond);
         }
 
         private void cmbSecondSpeed07_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float amount = float.Parse(cmbSecondSpeed07.SelectedItem.ToString());
-            SetSpeed(7, amount);
+            string value = cmbSecondSpeed07.SelectedItem.ToString();
+            int milisecond = (int) (Convert.ToDouble(value) * 1000);
+
+            skills[6].SetSkillSpeed(milisecond);
         }
         #endregion
 
         #endregion
 
         #region Variables
-        private List<Timer> timerSkills = new List<Timer>();
+        private List<Skill> skills = new List<Skill>();
 
         public bool SkillsRunning = false;
         public bool ZRRunning = false;
-
-        public bool Skill01Active = false;
-        public bool Skill02Active = false;
-        public bool Skill03Active = false;
-        public bool Skill04Active = false;
-        public bool Skill05Active = false;
-        public bool Skill06Active = false;
-        public bool Skill07Active = false;
 
         public float MiliSpeedSkill01 = 100f;
         public float MiliSpeedSkill02 = 100f;
@@ -197,6 +228,21 @@ namespace KOMacro
             CreateTimerSkills();
 
             InitSpeedComboboxes();
+        }
+
+        public void CreateTimerSkills()
+        {
+            for (int ii = 0; ii < 7; ii++)
+            {
+                Timer timer = new Timer();
+                timer.Tag = "Skill " + (ii + 1);
+                timer.Tick += delegate {
+                    Console.WriteLine(timer.Tag + " used! (" + timer.Interval + ")");
+                };
+
+                Skill skill = new Skill(timer);
+                skills.Add(skill);
+            }
         }
 
         public void InitSpeedComboboxes()
@@ -227,104 +273,6 @@ namespace KOMacro
             cmbSecondSpeed05.SelectedIndex = secondSpeeds.Length - 1;
             cmbSecondSpeed06.SelectedIndex = secondSpeeds.Length - 1;
             cmbSecondSpeed07.SelectedIndex = 9;
-        }
-
-
-        #region Timer Methods
-        public void CreateTimerSkills()
-        {
-            for (int ii = 0; ii < 7; ii++)
-            {
-                Timer timerSkill = new Timer();
-                timerSkill.Tag = "Skill " + (ii + 1);
-                timerSkill.Tick += delegate {
-                    Console.WriteLine(timerSkill.Tag + " used! (" + timerSkill.Interval + ")");
-                };
-                timerSkills.Add(timerSkill);
-            }
-        }
-
-        public void StopTimerSkill(Timer timer)
-        {
-            if (timer != null)
-                timer.Dispose();
-        }
-
-        public void StartTimerSkill(Timer timer)
-        {
-            if (timer != null)
-                timer.Dispose();
-
-            timer.Start();
-        }
-
-        public void SetTimerSkill(Timer timer, int miliseconds)
-        {
-            Timer temp = timer;
-
-            if (timer != null)
-                timer.Dispose();
-
-            timer = temp;
-            timer.Interval = miliseconds;
-
-            if (SkillsRunning)
-                timer.Start();
-        }
-        #endregion
-
-        public bool IsItNumber(KeyPressEventArgs e)
-        {
-            bool error = true;
-            char ch = e.KeyChar;
-
-            Console.WriteLine(ch);
-
-            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
-            {
-                e.Handled = true;
-
-                error = false;
-                return error;
-            }
-            return error;
-        }
-
-        public void SetSpeed(int skillNumber, float amount)
-        {
-            switch (skillNumber)
-            {
-                case 1:
-                    MiliSpeedSkill01 = amount;
-                    SetTimerSkill(timerSkills[0], (int)Convert.ToDouble(MiliSpeedSkill01.ToString()));
-                    break;
-                case 2:
-                    MiliSpeedSkill02 = amount;
-                    SetTimerSkill(timerSkills[1], (int)Convert.ToDouble(MiliSpeedSkill02.ToString()));
-                    break;
-                case 3:
-                    MiliSpeedSkill03 = amount;
-                    SetTimerSkill(timerSkills[2], (int)Convert.ToDouble(MiliSpeedSkill03.ToString()));
-                    break;
-                case 4:
-                    MiliSpeedSkill04 = amount;
-                    SetTimerSkill(timerSkills[3], (int)Convert.ToDouble(MiliSpeedSkill04.ToString()));
-                    break;
-                case 5:
-                    SecondSpeedSkill05 = amount * 1000;
-                    SetTimerSkill(timerSkills[4], (int)Convert.ToDouble(SecondSpeedSkill05.ToString()));
-                    break;
-                case 6:
-                    SecondSpeedSkill06 = amount * 1000;
-                    SetTimerSkill(timerSkills[5], (int)Convert.ToDouble(SecondSpeedSkill06.ToString()));
-                    break;
-                case 7:
-                    SecondSpeedSkill07 = amount * 1000;
-                    SetTimerSkill(timerSkills[6], (int)Convert.ToDouble(SecondSpeedSkill07.ToString()));
-                    break;
-                default:
-                    break;
-            }
         }
     }
 }
