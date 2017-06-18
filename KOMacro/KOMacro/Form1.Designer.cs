@@ -32,34 +32,28 @@
             this.edtSkill01 = new System.Windows.Forms.TextBox();
             this.txtNumber = new System.Windows.Forms.Label();
             this.txtSpeedMiliSecond = new System.Windows.Forms.Label();
-            this.edtMiliSpeedSkill01 = new System.Windows.Forms.TextBox();
             this.chcSkill01Active = new System.Windows.Forms.CheckBox();
             this.txtSkillActive = new System.Windows.Forms.Label();
             this.pnlSkill01Progress = new System.Windows.Forms.Panel();
             this.txtProgress = new System.Windows.Forms.Label();
             this.pnlSkill02Progress = new System.Windows.Forms.Panel();
             this.chcSkill02Active = new System.Windows.Forms.CheckBox();
-            this.edtMiliSpeedSkill02 = new System.Windows.Forms.TextBox();
             this.edtSkill02 = new System.Windows.Forms.TextBox();
             this.txtSkill02 = new System.Windows.Forms.Label();
             this.pnlSkill03Progress = new System.Windows.Forms.Panel();
             this.chcSkill03Active = new System.Windows.Forms.CheckBox();
-            this.edtMiliSpeedSkill03 = new System.Windows.Forms.TextBox();
             this.edtSkill03 = new System.Windows.Forms.TextBox();
             this.txtSkill03 = new System.Windows.Forms.Label();
             this.pnlSkill04Progress = new System.Windows.Forms.Panel();
             this.chcSkill04Active = new System.Windows.Forms.CheckBox();
-            this.edtMiliSpeedSkill04 = new System.Windows.Forms.TextBox();
             this.edtSkill04 = new System.Windows.Forms.TextBox();
             this.txtSkill04 = new System.Windows.Forms.Label();
             this.pnlSkill05Progress = new System.Windows.Forms.Panel();
             this.chcSkill05Active = new System.Windows.Forms.CheckBox();
-            this.edtSecondSpeedSkill05 = new System.Windows.Forms.TextBox();
             this.edtSkill05 = new System.Windows.Forms.TextBox();
             this.txtSkill05 = new System.Windows.Forms.Label();
             this.pnlSkill06Progress = new System.Windows.Forms.Panel();
             this.chcSkill06Active = new System.Windows.Forms.CheckBox();
-            this.edtSecondSpeedSkill06 = new System.Windows.Forms.TextBox();
             this.edtSkill06 = new System.Windows.Forms.TextBox();
             this.txtSkill06 = new System.Windows.Forms.Label();
             this.btnStartSkills = new System.Windows.Forms.Button();
@@ -70,9 +64,15 @@
             this.txtNumber2 = new System.Windows.Forms.Label();
             this.pnlSkill07Progress = new System.Windows.Forms.Panel();
             this.chcSkill07Active = new System.Windows.Forms.CheckBox();
-            this.edtSecondSpeedSkill07 = new System.Windows.Forms.TextBox();
             this.edtSkill07 = new System.Windows.Forms.TextBox();
             this.txtSkill07 = new System.Windows.Forms.Label();
+            this.cmbMiliSpeed01 = new System.Windows.Forms.ComboBox();
+            this.cmbMiliSpeed02 = new System.Windows.Forms.ComboBox();
+            this.cmbMiliSpeed03 = new System.Windows.Forms.ComboBox();
+            this.cmbMiliSpeed04 = new System.Windows.Forms.ComboBox();
+            this.cmbSecondSpeed05 = new System.Windows.Forms.ComboBox();
+            this.cmbSecondSpeed06 = new System.Windows.Forms.ComboBox();
+            this.cmbSecondSpeed07 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtSkill01
@@ -106,21 +106,12 @@
             // 
             // txtSpeedMiliSecond
             // 
-            this.txtSpeedMiliSecond.Location = new System.Drawing.Point(119, 13);
+            this.txtSpeedMiliSecond.Location = new System.Drawing.Point(122, 13);
             this.txtSpeedMiliSecond.Name = "txtSpeedMiliSecond";
             this.txtSpeedMiliSecond.Size = new System.Drawing.Size(42, 13);
             this.txtSpeedMiliSecond.TabIndex = 4;
             this.txtSpeedMiliSecond.Text = "Hız(ms)";
             this.txtSpeedMiliSecond.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // edtMiliSpeedSkill01
-            // 
-            this.edtMiliSpeedSkill01.Location = new System.Drawing.Point(119, 29);
-            this.edtMiliSpeedSkill01.Name = "edtMiliSpeedSkill01";
-            this.edtMiliSpeedSkill01.Size = new System.Drawing.Size(42, 20);
-            this.edtMiliSpeedSkill01.TabIndex = 3;
-            this.edtMiliSpeedSkill01.Text = "100";
-            this.edtMiliSpeedSkill01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // chcSkill01Active
             // 
@@ -176,15 +167,6 @@
             this.chcSkill02Active.UseVisualStyleBackColor = true;
             this.chcSkill02Active.CheckedChanged += new System.EventHandler(this.chcSkill02Active_CheckedChanged);
             // 
-            // edtMiliSpeedSkill02
-            // 
-            this.edtMiliSpeedSkill02.Location = new System.Drawing.Point(119, 55);
-            this.edtMiliSpeedSkill02.Name = "edtMiliSpeedSkill02";
-            this.edtMiliSpeedSkill02.Size = new System.Drawing.Size(42, 20);
-            this.edtMiliSpeedSkill02.TabIndex = 10;
-            this.edtMiliSpeedSkill02.Text = "100";
-            this.edtMiliSpeedSkill02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // edtSkill02
             // 
             this.edtSkill02.Enabled = false;
@@ -222,15 +204,6 @@
             this.chcSkill03Active.TabIndex = 16;
             this.chcSkill03Active.UseVisualStyleBackColor = true;
             this.chcSkill03Active.CheckedChanged += new System.EventHandler(this.chcSkill03Active_CheckedChanged);
-            // 
-            // edtMiliSpeedSkill03
-            // 
-            this.edtMiliSpeedSkill03.Location = new System.Drawing.Point(119, 81);
-            this.edtMiliSpeedSkill03.Name = "edtMiliSpeedSkill03";
-            this.edtMiliSpeedSkill03.Size = new System.Drawing.Size(42, 20);
-            this.edtMiliSpeedSkill03.TabIndex = 15;
-            this.edtMiliSpeedSkill03.Text = "100";
-            this.edtMiliSpeedSkill03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // edtSkill03
             // 
@@ -270,15 +243,6 @@
             this.chcSkill04Active.UseVisualStyleBackColor = true;
             this.chcSkill04Active.CheckedChanged += new System.EventHandler(this.chcSkill04Active_CheckedChanged);
             // 
-            // edtMiliSpeedSkill04
-            // 
-            this.edtMiliSpeedSkill04.Location = new System.Drawing.Point(119, 107);
-            this.edtMiliSpeedSkill04.Name = "edtMiliSpeedSkill04";
-            this.edtMiliSpeedSkill04.Size = new System.Drawing.Size(42, 20);
-            this.edtMiliSpeedSkill04.TabIndex = 20;
-            this.edtMiliSpeedSkill04.Text = "100";
-            this.edtMiliSpeedSkill04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // edtSkill04
             // 
             this.edtSkill04.Enabled = false;
@@ -317,15 +281,6 @@
             this.chcSkill05Active.UseVisualStyleBackColor = true;
             this.chcSkill05Active.CheckedChanged += new System.EventHandler(this.chcSkill05Active_CheckedChanged);
             // 
-            // edtSecondSpeedSkill05
-            // 
-            this.edtSecondSpeedSkill05.Location = new System.Drawing.Point(119, 162);
-            this.edtSecondSpeedSkill05.Name = "edtSecondSpeedSkill05";
-            this.edtSecondSpeedSkill05.Size = new System.Drawing.Size(42, 20);
-            this.edtSecondSpeedSkill05.TabIndex = 25;
-            this.edtSecondSpeedSkill05.Text = "10";
-            this.edtSecondSpeedSkill05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // edtSkill05
             // 
             this.edtSkill05.Enabled = false;
@@ -363,15 +318,6 @@
             this.chcSkill06Active.TabIndex = 31;
             this.chcSkill06Active.UseVisualStyleBackColor = true;
             this.chcSkill06Active.CheckedChanged += new System.EventHandler(this.chcSkill06Active_CheckedChanged);
-            // 
-            // edtSecondSpeedSkill06
-            // 
-            this.edtSecondSpeedSkill06.Location = new System.Drawing.Point(119, 188);
-            this.edtSecondSpeedSkill06.Name = "edtSecondSpeedSkill06";
-            this.edtSecondSpeedSkill06.Size = new System.Drawing.Size(42, 20);
-            this.edtSecondSpeedSkill06.TabIndex = 30;
-            this.edtSecondSpeedSkill06.Text = "10";
-            this.edtSecondSpeedSkill06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // edtSkill06
             // 
@@ -431,7 +377,7 @@
             // 
             // txtSpeedSecond
             // 
-            this.txtSpeedSecond.Location = new System.Drawing.Point(119, 146);
+            this.txtSpeedSecond.Location = new System.Drawing.Point(122, 146);
             this.txtSpeedSecond.Name = "txtSpeedSecond";
             this.txtSpeedSecond.Size = new System.Drawing.Size(42, 13);
             this.txtSpeedSecond.TabIndex = 36;
@@ -465,15 +411,6 @@
             this.chcSkill07Active.UseVisualStyleBackColor = true;
             this.chcSkill07Active.CheckedChanged += new System.EventHandler(this.chcSkill07Active_CheckedChanged);
             // 
-            // edtSecondSpeedSkill07
-            // 
-            this.edtSecondSpeedSkill07.Location = new System.Drawing.Point(119, 214);
-            this.edtSecondSpeedSkill07.Name = "edtSecondSpeedSkill07";
-            this.edtSecondSpeedSkill07.Size = new System.Drawing.Size(42, 20);
-            this.edtSecondSpeedSkill07.TabIndex = 35;
-            this.edtSecondSpeedSkill07.Text = "0.5";
-            this.edtSecondSpeedSkill07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // edtSkill07
             // 
             this.edtSkill07.Enabled = false;
@@ -494,16 +431,85 @@
             this.txtSkill07.Text = "Minor:";
             this.txtSkill07.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cmbMiliSpeed01
+            // 
+            this.cmbMiliSpeed01.FormattingEnabled = true;
+            this.cmbMiliSpeed01.Location = new System.Drawing.Point(122, 28);
+            this.cmbMiliSpeed01.Name = "cmbMiliSpeed01";
+            this.cmbMiliSpeed01.Size = new System.Drawing.Size(42, 21);
+            this.cmbMiliSpeed01.TabIndex = 39;
+            this.cmbMiliSpeed01.SelectedIndexChanged += new System.EventHandler(this.cmbMiliSpeed01_SelectedIndexChanged);
+            // 
+            // cmbMiliSpeed02
+            // 
+            this.cmbMiliSpeed02.FormattingEnabled = true;
+            this.cmbMiliSpeed02.Location = new System.Drawing.Point(122, 54);
+            this.cmbMiliSpeed02.Name = "cmbMiliSpeed02";
+            this.cmbMiliSpeed02.Size = new System.Drawing.Size(42, 21);
+            this.cmbMiliSpeed02.TabIndex = 40;
+            this.cmbMiliSpeed02.SelectedIndexChanged += new System.EventHandler(this.cmbMiliSpeed02_SelectedIndexChanged);
+            // 
+            // cmbMiliSpeed03
+            // 
+            this.cmbMiliSpeed03.FormattingEnabled = true;
+            this.cmbMiliSpeed03.Location = new System.Drawing.Point(122, 81);
+            this.cmbMiliSpeed03.Name = "cmbMiliSpeed03";
+            this.cmbMiliSpeed03.Size = new System.Drawing.Size(42, 21);
+            this.cmbMiliSpeed03.TabIndex = 41;
+            this.cmbMiliSpeed03.SelectedIndexChanged += new System.EventHandler(this.cmbMiliSpeed03_SelectedIndexChanged);
+            // 
+            // cmbMiliSpeed04
+            // 
+            this.cmbMiliSpeed04.FormattingEnabled = true;
+            this.cmbMiliSpeed04.Location = new System.Drawing.Point(122, 107);
+            this.cmbMiliSpeed04.Name = "cmbMiliSpeed04";
+            this.cmbMiliSpeed04.Size = new System.Drawing.Size(42, 21);
+            this.cmbMiliSpeed04.TabIndex = 42;
+            this.cmbMiliSpeed04.SelectedIndexChanged += new System.EventHandler(this.cmbMiliSpeed04_SelectedIndexChanged);
+            // 
+            // cmbSecondSpeed05
+            // 
+            this.cmbSecondSpeed05.FormattingEnabled = true;
+            this.cmbSecondSpeed05.Location = new System.Drawing.Point(122, 162);
+            this.cmbSecondSpeed05.Name = "cmbSecondSpeed05";
+            this.cmbSecondSpeed05.Size = new System.Drawing.Size(42, 21);
+            this.cmbSecondSpeed05.TabIndex = 43;
+            this.cmbSecondSpeed05.SelectedIndexChanged += new System.EventHandler(this.cmbSecondSpeed05_SelectedIndexChanged);
+            // 
+            // cmbSecondSpeed06
+            // 
+            this.cmbSecondSpeed06.FormattingEnabled = true;
+            this.cmbSecondSpeed06.Location = new System.Drawing.Point(122, 188);
+            this.cmbSecondSpeed06.Name = "cmbSecondSpeed06";
+            this.cmbSecondSpeed06.Size = new System.Drawing.Size(42, 21);
+            this.cmbSecondSpeed06.TabIndex = 44;
+            this.cmbSecondSpeed06.SelectedIndexChanged += new System.EventHandler(this.cmbSecondSpeed06_SelectedIndexChanged);
+            // 
+            // cmbSecondSpeed07
+            // 
+            this.cmbSecondSpeed07.FormattingEnabled = true;
+            this.cmbSecondSpeed07.Location = new System.Drawing.Point(122, 214);
+            this.cmbSecondSpeed07.Name = "cmbSecondSpeed07";
+            this.cmbSecondSpeed07.Size = new System.Drawing.Size(42, 21);
+            this.cmbSecondSpeed07.TabIndex = 45;
+            this.cmbSecondSpeed07.SelectedIndexChanged += new System.EventHandler(this.cmbSecondSpeed07_SelectedIndexChanged);
+            // 
             // frmKOmacro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 302);
+            this.Controls.Add(this.cmbSecondSpeed07);
+            this.Controls.Add(this.cmbSecondSpeed06);
+            this.Controls.Add(this.cmbSecondSpeed05);
+            this.Controls.Add(this.cmbMiliSpeed04);
+            this.Controls.Add(this.cmbMiliSpeed03);
+            this.Controls.Add(this.cmbMiliSpeed02);
+            this.Controls.Add(this.cmbMiliSpeed01);
             this.Controls.Add(this.pnlSkill07Progress);
             this.Controls.Add(this.txtSecondProgress);
             this.Controls.Add(this.chcSkill07Active);
             this.Controls.Add(this.txtSecondSkillActive);
-            this.Controls.Add(this.edtSecondSpeedSkill07);
             this.Controls.Add(this.edtSkill07);
             this.Controls.Add(this.txtSpeedSecond);
             this.Controls.Add(this.txtSkill07);
@@ -513,34 +519,28 @@
             this.Controls.Add(this.pnlSkill06Progress);
             this.Controls.Add(this.chcSkill06Active);
             this.Controls.Add(this.pnlSkill05Progress);
-            this.Controls.Add(this.edtSecondSpeedSkill06);
             this.Controls.Add(this.chcSkill05Active);
             this.Controls.Add(this.edtSkill06);
             this.Controls.Add(this.pnlSkill04Progress);
             this.Controls.Add(this.txtSkill06);
-            this.Controls.Add(this.edtSecondSpeedSkill05);
             this.Controls.Add(this.chcSkill04Active);
             this.Controls.Add(this.edtSkill05);
             this.Controls.Add(this.pnlSkill03Progress);
             this.Controls.Add(this.txtSkill05);
-            this.Controls.Add(this.edtMiliSpeedSkill04);
             this.Controls.Add(this.chcSkill03Active);
             this.Controls.Add(this.edtSkill04);
             this.Controls.Add(this.pnlSkill02Progress);
             this.Controls.Add(this.txtSkill04);
-            this.Controls.Add(this.edtMiliSpeedSkill03);
             this.Controls.Add(this.txtProgress);
             this.Controls.Add(this.edtSkill03);
             this.Controls.Add(this.chcSkill02Active);
             this.Controls.Add(this.txtSkill03);
             this.Controls.Add(this.pnlSkill01Progress);
-            this.Controls.Add(this.edtMiliSpeedSkill02);
             this.Controls.Add(this.edtSkill02);
             this.Controls.Add(this.txtSkillActive);
             this.Controls.Add(this.txtSkill02);
             this.Controls.Add(this.chcSkill01Active);
             this.Controls.Add(this.txtSpeedMiliSecond);
-            this.Controls.Add(this.edtMiliSpeedSkill01);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.edtSkill01);
             this.Controls.Add(this.txtSkill01);
@@ -558,34 +558,28 @@
         private System.Windows.Forms.TextBox edtSkill01;
         private System.Windows.Forms.Label txtNumber;
         private System.Windows.Forms.Label txtSpeedMiliSecond;
-        private System.Windows.Forms.TextBox edtMiliSpeedSkill01;
         private System.Windows.Forms.CheckBox chcSkill01Active;
         private System.Windows.Forms.Label txtSkillActive;
         private System.Windows.Forms.Panel pnlSkill01Progress;
         private System.Windows.Forms.Label txtProgress;
         private System.Windows.Forms.Panel pnlSkill02Progress;
         private System.Windows.Forms.CheckBox chcSkill02Active;
-        private System.Windows.Forms.TextBox edtMiliSpeedSkill02;
         private System.Windows.Forms.TextBox edtSkill02;
         private System.Windows.Forms.Label txtSkill02;
         private System.Windows.Forms.Panel pnlSkill03Progress;
         private System.Windows.Forms.CheckBox chcSkill03Active;
-        private System.Windows.Forms.TextBox edtMiliSpeedSkill03;
         private System.Windows.Forms.TextBox edtSkill03;
         private System.Windows.Forms.Label txtSkill03;
         private System.Windows.Forms.Panel pnlSkill04Progress;
         private System.Windows.Forms.CheckBox chcSkill04Active;
-        private System.Windows.Forms.TextBox edtMiliSpeedSkill04;
         private System.Windows.Forms.TextBox edtSkill04;
         private System.Windows.Forms.Label txtSkill04;
         private System.Windows.Forms.Panel pnlSkill05Progress;
         private System.Windows.Forms.CheckBox chcSkill05Active;
-        private System.Windows.Forms.TextBox edtSecondSpeedSkill05;
         private System.Windows.Forms.TextBox edtSkill05;
         private System.Windows.Forms.Label txtSkill05;
         private System.Windows.Forms.Panel pnlSkill06Progress;
         private System.Windows.Forms.CheckBox chcSkill06Active;
-        private System.Windows.Forms.TextBox edtSecondSpeedSkill06;
         private System.Windows.Forms.TextBox edtSkill06;
         private System.Windows.Forms.Label txtSkill06;
         private System.Windows.Forms.Button btnStartSkills;
@@ -596,9 +590,15 @@
         private System.Windows.Forms.Label txtNumber2;
         private System.Windows.Forms.Panel pnlSkill07Progress;
         private System.Windows.Forms.CheckBox chcSkill07Active;
-        private System.Windows.Forms.TextBox edtSecondSpeedSkill07;
         private System.Windows.Forms.TextBox edtSkill07;
         private System.Windows.Forms.Label txtSkill07;
+        private System.Windows.Forms.ComboBox cmbMiliSpeed01;
+        private System.Windows.Forms.ComboBox cmbMiliSpeed02;
+        private System.Windows.Forms.ComboBox cmbMiliSpeed03;
+        private System.Windows.Forms.ComboBox cmbMiliSpeed04;
+        private System.Windows.Forms.ComboBox cmbSecondSpeed05;
+        private System.Windows.Forms.ComboBox cmbSecondSpeed06;
+        private System.Windows.Forms.ComboBox cmbSecondSpeed07;
     }
 }
 
