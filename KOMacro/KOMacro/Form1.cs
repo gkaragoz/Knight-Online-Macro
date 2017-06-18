@@ -19,29 +19,30 @@ namespace KOMacro
 
             public Skill(Timer timer)
             {
-                this.timer = timer;
                 this.skillActive = false;
+                this.timer = timer;
             }
 
-            private void StopSkill()
+            public bool TimerActive()
+            {   if (timer != null)
+                    return timer.Enabled;
+                else
+                    return false;
+            } 
+
+            public void StartSkill()
             {
-                if (timer != null)
-                    timer.Dispose();
+                if (SkillsRunning && skillActive)
+                {
+                    timer.Start();
+                    Console.WriteLine(timer.Tag + " started.");
+                }
+            }
 
-                skillActive = false;
-
+            public void StopSkill()
+            {
+                timer.Stop();
                 Console.WriteLine(timer.Tag + " stopped.");
-            }
-
-            private void StartSkill()
-            {
-                if (timer != null)
-                    timer.Dispose();
-
-                timer.Start();
-                skillActive = true;
-
-                Console.WriteLine(timer.Tag + " started.");
             }
 
             public void SetSkillSpeed(int miliseconds)
@@ -53,24 +54,29 @@ namespace KOMacro
 
                 timer = temp;
                 timer.Interval = miliseconds;
-
-                if (skillActive)
-                    timer.Start();
+                StartSkill();
 
                 Console.WriteLine(timer.Tag + " speed set: " + timer.Interval);
             }
 
-            public void SetSkillActive(bool attack)
+            public void SetSkillActive()
             {
                 skillActive = !skillActive;
 
-                if (skillActive && attack)
+                if (skillActive)
                     StartSkill();
                 else
                     StopSkill();
             }
-        }
 
+            //public void PaintProgress()
+            //{
+            //    if (TimerActive())
+            //        panel.BackColor = Color.SpringGreen;
+            //    else
+            //        panel.BackColor = Color.Crimson;
+            //}
+        }
 
         #region Events
 
@@ -81,11 +87,13 @@ namespace KOMacro
 
             if (SkillsRunning)
             {
+                StartAllSkills();
                 btnStartBasic.Enabled = false;
                 btnStartSkills.Text = "Durdur";
             }
             else
             {
+                StopAllSkills();
                 btnStartBasic.Enabled = true;
                 btnStartSkills.Text = "Skillerle Başlat";
             }
@@ -111,37 +119,37 @@ namespace KOMacro
         #region CheckBoxes Checked Events
         private void chcSkill01Active_CheckedChanged(object sender, EventArgs e)
         {
-            skills[0].SetSkillActive(SkillsRunning);
+            skills[0].SetSkillActive();
         }
 
         private void chcSkill02Active_CheckedChanged(object sender, EventArgs e)
         {
-            skills[1].SetSkillActive(SkillsRunning);
+            skills[1].SetSkillActive();
         }
 
         private void chcSkill03Active_CheckedChanged(object sender, EventArgs e)
         {
-            skills[2].SetSkillActive(SkillsRunning);
+            skills[2].SetSkillActive();
         }
 
         private void chcSkill04Active_CheckedChanged(object sender, EventArgs e)
         {
-            skills[3].SetSkillActive(SkillsRunning);
+            skills[3].SetSkillActive();
         }
 
         private void chcSkill05Active_CheckedChanged(object sender, EventArgs e)
         {
-            skills[4].SetSkillActive(SkillsRunning);
+            skills[4].SetSkillActive();
         }
 
         private void chcSkill06Active_CheckedChanged(object sender, EventArgs e)
         {
-            skills[5].SetSkillActive(SkillsRunning);
+            skills[5].SetSkillActive();
         }
 
         private void chcSkill07Active_CheckedChanged(object sender, EventArgs e)
         {
-            skills[6].SetSkillActive(SkillsRunning);
+            skills[6].SetSkillActive();
         }
         #endregion
 
@@ -208,8 +216,8 @@ namespace KOMacro
         #region Variables
         private List<Skill> skills = new List<Skill>();
 
-        public bool SkillsRunning = false;
-        public bool ZRRunning = false;
+        public static bool SkillsRunning = false;
+        public static bool ZRRunning = false;
 
         public float MiliSpeedSkill01 = 100f;
         public float MiliSpeedSkill02 = 100f;
@@ -245,6 +253,18 @@ namespace KOMacro
             }
         }
 
+        public void StartAllSkills()
+        {
+            foreach (var item in skills)
+                item.StartSkill();
+        }
+
+        public void StopAllSkills()
+        {
+            foreach (var item in skills)
+                item.StopSkill();
+        }
+        
         public void InitSpeedComboboxes()
         {
             int [] miliSpeeds = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
