@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KOMacro
 {
-    public partial class Form1 : Form
+    public partial class frmKOmacro : Form
     {
-        public Form1()
+        public frmKOmacro()
         {
             InitializeComponent();
         }

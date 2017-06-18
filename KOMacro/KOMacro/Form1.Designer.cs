@@ -1,6 +1,6 @@
 ﻿namespace KOMacro
 {
-    partial class Form1
+    partial class frmKOmacro
     {
         /// <summary>
         /// Required designer variable.
@@ -480,7 +480,7 @@
             this.txtSkill07.Text = "Minor:";
             this.txtSkill07.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Form1
+            // frmKOmacro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -530,9 +530,9 @@
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.edtSkill01);
             this.Controls.Add(this.txtSkill01);
-            this.Name = "Form1";
+            this.Name = "frmKOmacro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "KOmacro";
             this.ResumeLayout(false);
             this.PerformLayout();
 
