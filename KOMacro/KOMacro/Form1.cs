@@ -70,6 +70,49 @@ namespace KOMacro
             }
         }
 
+        public class ZRSkill
+        {
+            private Timer zTimer;
+            private Timer rTimer;
+            
+            public ZRSkill()
+            {
+                zTimer = new Timer();
+                zTimer.Tag = "zTimer";
+                zTimer.Tick += delegate
+                {
+                    Console.WriteLine("z button pressed. " + zTimer.Interval);
+                };
+                zTimer.Interval = 100;
+
+                rTimer = new Timer();
+                rTimer.Tag = "rTimer";
+                rTimer.Tick += delegate
+                {
+                    Console.WriteLine("r button pressed. " + rTimer.Interval);
+                };
+                rTimer.Interval = 1000;
+            }
+
+            public void Start()
+            {
+                if (zTimer != null && rTimer != null)
+                {
+                    zTimer.Start();
+                    rTimer.Start();
+                }
+            }
+
+            public void Stop()
+            {
+                if (zTimer != null && rTimer != null)
+                {
+                    zTimer.Stop();
+                    rTimer.Stop();
+                }
+            }
+        }
+
         #region Events
 
         #region Button Click Events
@@ -97,11 +140,15 @@ namespace KOMacro
 
             if (ZRRunning)
             {
+                zrSkill.Start();
+                DisableAllComponents();
                 btnStartSkills.Enabled = false;
                 btnStartBasic.Text = "Durdur";
             }
             else
             {
+                zrSkill.Stop();
+                EnableAllComponents();
                 btnStartSkills.Enabled = true;
                 btnStartBasic.Text = "Z-R Skillsiz Başlat";
             }
@@ -207,6 +254,7 @@ namespace KOMacro
 
         #region Variables
         private List<Skill> skills = new List<Skill>();
+        private ZRSkill zrSkill = new ZRSkill();
 
         public static bool SkillsRunning = false;
         public static bool ZRRunning = false;
@@ -285,6 +333,44 @@ namespace KOMacro
             cmbSecondSpeed05.SelectedIndex = secondSpeeds.Length - 1;
             cmbSecondSpeed06.SelectedIndex = secondSpeeds.Length - 1;
             cmbSecondSpeed07.SelectedIndex = 9;
+        }
+
+        public void DisableAllComponents()
+        {
+            cmbMiliSpeed01.Enabled = false;
+            cmbMiliSpeed02.Enabled = false;
+            cmbMiliSpeed03.Enabled = false;
+            cmbMiliSpeed04.Enabled = false;
+            cmbSecondSpeed05.Enabled = false;
+            cmbSecondSpeed06.Enabled = false;
+            cmbSecondSpeed07.Enabled = false;
+
+            chcSkill01Active.Enabled = false;
+            chcSkill02Active.Enabled = false;
+            chcSkill03Active.Enabled = false;
+            chcSkill04Active.Enabled = false;
+            chcSkill05Active.Enabled = false;
+            chcSkill06Active.Enabled = false;
+            chcSkill07Active.Enabled = false;
+        }
+
+        public void EnableAllComponents()
+        {
+            cmbMiliSpeed01.Enabled = true;
+            cmbMiliSpeed02.Enabled = true;
+            cmbMiliSpeed03.Enabled = true;
+            cmbMiliSpeed04.Enabled = true;
+            cmbSecondSpeed05.Enabled = true;
+            cmbSecondSpeed06.Enabled = true;
+            cmbSecondSpeed07.Enabled = true;
+
+            chcSkill01Active.Enabled = true;
+            chcSkill02Active.Enabled = true;
+            chcSkill03Active.Enabled = true;
+            chcSkill04Active.Enabled = true;
+            chcSkill05Active.Enabled = true;
+            chcSkill06Active.Enabled = true;
+            chcSkill07Active.Enabled = true;
         }
     }
 }
