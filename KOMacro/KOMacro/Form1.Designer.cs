@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKOmacro));
             this.txtSkill01 = new System.Windows.Forms.Label();
             this.edtSkill01 = new System.Windows.Forms.TextBox();
             this.txtNumber = new System.Windows.Forms.Label();
@@ -66,6 +68,7 @@
             this.cmbSecondSpeed07 = new System.Windows.Forms.ComboBox();
             this.txtShortCut01 = new System.Windows.Forms.Label();
             this.txtShortCut02 = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // txtSkill01
@@ -433,6 +436,13 @@
             this.txtShortCut02.Text = "Kısayol: Tab";
             this.txtShortCut02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "KOmacro 1.0";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
+            // 
             // frmKOmacro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,6 +490,7 @@
             this.Name = "frmKOmacro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KOmacro";
+            this.Resize += new System.EventHandler(this.frmKOmacro_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,6 +536,7 @@
         private System.Windows.Forms.ComboBox cmbSecondSpeed07;
         private System.Windows.Forms.Label txtShortCut01;
         private System.Windows.Forms.Label txtShortCut02;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

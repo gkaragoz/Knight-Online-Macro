@@ -306,7 +306,16 @@ namespace KOMacro
 
             else if (keyData == (Keys.Control | Keys.Space))
             {
-                MessageBox.Show("Show-disable background app!");
+                if (Program.MainForm.Visible)
+                {
+                    Program.MainForm.Hide();
+                    Console.WriteLine("hide");
+                }
+                else
+                {
+                    Program.MainForm.Show();
+                }
+                //MessageBox.Show("Show-disable background app!");
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -333,5 +342,17 @@ namespace KOMacro
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
+
+        private void frmKOmacro_Resize(object sender, EventArgs e)
+        {
+            if (FormWindowState.Minimized == WindowState)
+                Hide();
+        }
+
+        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
     }
 }
