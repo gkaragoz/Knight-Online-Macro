@@ -358,63 +358,63 @@
             // cmbMiliSpeed01
             // 
             this.cmbMiliSpeed01.FormattingEnabled = true;
-            this.cmbMiliSpeed01.Location = new System.Drawing.Point(122, 28);
+            this.cmbMiliSpeed01.Location = new System.Drawing.Point(116, 28);
             this.cmbMiliSpeed01.Name = "cmbMiliSpeed01";
-            this.cmbMiliSpeed01.Size = new System.Drawing.Size(42, 21);
+            this.cmbMiliSpeed01.Size = new System.Drawing.Size(50, 21);
             this.cmbMiliSpeed01.TabIndex = 39;
             this.cmbMiliSpeed01.SelectedIndexChanged += new System.EventHandler(this.cmbMiliSpeed01_SelectedIndexChanged);
             // 
             // cmbMiliSpeed02
             // 
             this.cmbMiliSpeed02.FormattingEnabled = true;
-            this.cmbMiliSpeed02.Location = new System.Drawing.Point(122, 54);
+            this.cmbMiliSpeed02.Location = new System.Drawing.Point(116, 54);
             this.cmbMiliSpeed02.Name = "cmbMiliSpeed02";
-            this.cmbMiliSpeed02.Size = new System.Drawing.Size(42, 21);
+            this.cmbMiliSpeed02.Size = new System.Drawing.Size(50, 21);
             this.cmbMiliSpeed02.TabIndex = 40;
             this.cmbMiliSpeed02.SelectedIndexChanged += new System.EventHandler(this.cmbMiliSpeed02_SelectedIndexChanged);
             // 
             // cmbMiliSpeed03
             // 
             this.cmbMiliSpeed03.FormattingEnabled = true;
-            this.cmbMiliSpeed03.Location = new System.Drawing.Point(122, 81);
+            this.cmbMiliSpeed03.Location = new System.Drawing.Point(116, 81);
             this.cmbMiliSpeed03.Name = "cmbMiliSpeed03";
-            this.cmbMiliSpeed03.Size = new System.Drawing.Size(42, 21);
+            this.cmbMiliSpeed03.Size = new System.Drawing.Size(50, 21);
             this.cmbMiliSpeed03.TabIndex = 41;
             this.cmbMiliSpeed03.SelectedIndexChanged += new System.EventHandler(this.cmbMiliSpeed03_SelectedIndexChanged);
             // 
             // cmbMiliSpeed04
             // 
             this.cmbMiliSpeed04.FormattingEnabled = true;
-            this.cmbMiliSpeed04.Location = new System.Drawing.Point(122, 107);
+            this.cmbMiliSpeed04.Location = new System.Drawing.Point(116, 107);
             this.cmbMiliSpeed04.Name = "cmbMiliSpeed04";
-            this.cmbMiliSpeed04.Size = new System.Drawing.Size(42, 21);
+            this.cmbMiliSpeed04.Size = new System.Drawing.Size(50, 21);
             this.cmbMiliSpeed04.TabIndex = 42;
             this.cmbMiliSpeed04.SelectedIndexChanged += new System.EventHandler(this.cmbMiliSpeed04_SelectedIndexChanged);
             // 
             // cmbSecondSpeed05
             // 
             this.cmbSecondSpeed05.FormattingEnabled = true;
-            this.cmbSecondSpeed05.Location = new System.Drawing.Point(122, 162);
+            this.cmbSecondSpeed05.Location = new System.Drawing.Point(116, 162);
             this.cmbSecondSpeed05.Name = "cmbSecondSpeed05";
-            this.cmbSecondSpeed05.Size = new System.Drawing.Size(42, 21);
+            this.cmbSecondSpeed05.Size = new System.Drawing.Size(50, 21);
             this.cmbSecondSpeed05.TabIndex = 43;
             this.cmbSecondSpeed05.SelectedIndexChanged += new System.EventHandler(this.cmbSecondSpeed05_SelectedIndexChanged);
             // 
             // cmbSecondSpeed06
             // 
             this.cmbSecondSpeed06.FormattingEnabled = true;
-            this.cmbSecondSpeed06.Location = new System.Drawing.Point(122, 188);
+            this.cmbSecondSpeed06.Location = new System.Drawing.Point(116, 188);
             this.cmbSecondSpeed06.Name = "cmbSecondSpeed06";
-            this.cmbSecondSpeed06.Size = new System.Drawing.Size(42, 21);
+            this.cmbSecondSpeed06.Size = new System.Drawing.Size(50, 21);
             this.cmbSecondSpeed06.TabIndex = 44;
             this.cmbSecondSpeed06.SelectedIndexChanged += new System.EventHandler(this.cmbSecondSpeed06_SelectedIndexChanged);
             // 
             // cmbSecondSpeed07
             // 
             this.cmbSecondSpeed07.FormattingEnabled = true;
-            this.cmbSecondSpeed07.Location = new System.Drawing.Point(122, 214);
+            this.cmbSecondSpeed07.Location = new System.Drawing.Point(116, 214);
             this.cmbSecondSpeed07.Name = "cmbSecondSpeed07";
-            this.cmbSecondSpeed07.Size = new System.Drawing.Size(42, 21);
+            this.cmbSecondSpeed07.Size = new System.Drawing.Size(50, 21);
             this.cmbSecondSpeed07.TabIndex = 45;
             this.cmbSecondSpeed07.SelectedIndexChanged += new System.EventHandler(this.cmbSecondSpeed07_SelectedIndexChanged);
             // 
