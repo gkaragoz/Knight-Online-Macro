@@ -188,7 +188,8 @@ namespace KOMacro
                 Timer timer = new Timer();
                 timer.Tag = "Skill " + (ii + 1);
                 timer.Tick += delegate {
-                    Console.WriteLine(timer.Tag + " used! (" + timer.Interval + ")");
+                    SendKeys.Send((ii + 1).ToString());
+                    //Console.WriteLine(timer.Tag + " used! (" + timer.Interval + ")");
                 };
 
                 Skill skill = new Skill(timer);
