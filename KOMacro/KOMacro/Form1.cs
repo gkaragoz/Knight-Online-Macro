@@ -267,6 +267,26 @@ namespace KOMacro
                 Skill skill1 = new Skill(t1);
                 skills.Add(skill1);
             }
+
+            CreateTimerZ();
+        }
+
+        public void CreateTimerZ()
+        {
+            Timer t1 = new Timer();
+            t1.Tag = "Skill Z";
+            t1.Tick += delegate
+            {
+                if (!ApplicationIsActivated())
+                {
+                    SendInputClass.KeyPress(0x5A);
+                    System.Threading.Thread.Sleep(10);
+                    SendInputClass.KeyRelease(0x5A);
+                }
+            };
+            Skill skill1 = new Skill(t1);
+            skill1.SetSkillActive();
+            skills.Add(skill1);
         }
 
         public void StartAllSkills()
