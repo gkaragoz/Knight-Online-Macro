@@ -248,112 +248,25 @@ namespace KOMacro
 
         public void CreateTimerSkills()
         {
-            Timer t1 = new Timer();
-            t1.Tag = "Skill 1";
-            t1.Tick += delegate
+            for (int ii = 0; ii < 7; ii++)
             {
-                if (!ApplicationIsActivated())
+                Timer t1 = new Timer();
+                t1.Tag = "Skill " + (ii + 1);
+
+                string value = "0x3" + (ii + 1);
+                short hexValue = Convert.ToInt16(value, 16);
+                t1.Tick += delegate
                 {
-                    SendInputClass.KeyPress(0x31);
-                    System.Threading.Thread.Sleep(100);
-                    SendInputClass.KeyRelease(0x31);
-                }
-                    //SendKeys.Send("1");
-            };
-
-            Timer t2 = new Timer();
-            t2.Tag = "Skill 2";
-            t2.Tick += delegate
-            {
-                if (!ApplicationIsActivated())
-                {
-                    SendInputClass.KeyPress(0x32);
-                    System.Threading.Thread.Sleep(100);
-                    SendInputClass.KeyRelease(0x32);
-                }
-                    //SendKeys.Send("2");
-            };
-
-            Timer t3 = new Timer();
-            t3.Tag = "Skill 3";
-            t3.Tick += delegate
-            {
-                if (!ApplicationIsActivated())
-                {
-                    SendInputClass.KeyPress(0x33);
-                    System.Threading.Thread.Sleep(100);
-                    SendInputClass.KeyRelease(0x33);
-                }
-                    //SendKeys.Send("3");
-            };
-
-            Timer t4 = new Timer();
-            t4.Tag = "Skill 4";
-            t4.Tick += delegate
-            {
-                if (!ApplicationIsActivated())
-                {
-                    SendInputClass.KeyPress(0x33);
-                    System.Threading.Thread.Sleep(100);
-                    SendInputClass.KeyRelease(0x33);
-                }
-                    //SendKeys.Send("4");
-            };
-
-            Timer t5 = new Timer();
-            t5.Tag = "Skill 5";
-            t5.Tick += delegate
-            {
-                if (!ApplicationIsActivated())
-                {
-                    SendInputClass.KeyPress(0x34);
-                    System.Threading.Thread.Sleep(100);
-                    SendInputClass.KeyRelease(0x34);
-                }
-                    //SendKeys.Send("5");
-            };
-
-            Timer t6 = new Timer();
-            t6.Tag = "Skill 6";
-            t6.Tick += delegate
-            {
-                if (!ApplicationIsActivated())
-                {
-                    SendInputClass.KeyPress(0x35);
-                    System.Threading.Thread.Sleep(100);
-                    SendInputClass.KeyRelease(0x35);
-                }
-                    //SendKeys.Send("6");
-            };
-
-            Timer t7 = new Timer();
-            t7.Tag = "Skill 7";
-            t7.Tick += delegate
-            {
-                if (!ApplicationIsActivated())
-                {
-                    SendInputClass.KeyPress(0x36);
-                    System.Threading.Thread.Sleep(100);
-                    SendInputClass.KeyRelease(0x36);
-                }
-                    //SendKeys.Send("7");
-            };
-
-            Skill skill1 = new Skill(t1);
-            Skill skill2 = new Skill(t2);
-            Skill skill3 = new Skill(t3);
-            Skill skill4 = new Skill(t4);
-            Skill skill5 = new Skill(t5);
-            Skill skill6 = new Skill(t6);
-            Skill skill7 = new Skill(t7);
-
-            skills.Add(skill1);
-            skills.Add(skill2);
-            skills.Add(skill3);
-            skills.Add(skill4);
-            skills.Add(skill5);
-            skills.Add(skill6);
-            skills.Add(skill7);
+                    if (!ApplicationIsActivated())
+                    {
+                        SendInputClass.KeyPress(hexValue);
+                        System.Threading.Thread.Sleep(10);
+                        SendInputClass.KeyRelease(hexValue);
+                    }
+                };
+                Skill skill1 = new Skill(t1);
+                skills.Add(skill1);
+            }
         }
 
         public void StartAllSkills()
