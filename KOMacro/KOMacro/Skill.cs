@@ -18,14 +18,6 @@ namespace KOMacro
             this.timer = timer;
         }
 
-        public bool TimerActive()
-        {
-            if (timer != null)
-                return timer.Enabled;
-            else
-                return false;
-        }
-
         public void StartSkill()
         {
             if (frmKOmacro.instance.SkillsRunning && skillActive)
