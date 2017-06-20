@@ -21,7 +21,7 @@ namespace KOMacro
                 if (!frmKOmacro.instance.ApplicationIsActivated())
                 {
                     SendInputClass.KeyPress(0x5A);
-                    System.Threading.Thread.Sleep(100);
+                    System.Threading.Thread.Sleep(10);
                     SendInputClass.KeyRelease(0x5A);
 
                     //SendKeys.Send("z");
@@ -37,7 +37,7 @@ namespace KOMacro
                 if (!frmKOmacro.instance.ApplicationIsActivated())
                 {
                     SendInputClass.KeyPress(0x52);
-                    System.Threading.Thread.Sleep(100);
+                    System.Threading.Thread.Sleep(10);
                     SendInputClass.KeyRelease(0x52);
 
                     //SendKeys.Send("r");
