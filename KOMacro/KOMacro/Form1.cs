@@ -253,7 +253,12 @@ namespace KOMacro
             t1.Tick += delegate
             {
                 if (!ApplicationIsActivated())
-                    SendKeys.Send("1");
+                {
+                    SendInputClass.KeyPress(0x31);
+                    System.Threading.Thread.Sleep(100);
+                    SendInputClass.KeyRelease(0x31);
+                }
+                    //SendKeys.Send("1");
             };
 
             Timer t2 = new Timer();
@@ -261,7 +266,12 @@ namespace KOMacro
             t2.Tick += delegate
             {
                 if (!ApplicationIsActivated())
-                    SendKeys.Send("2");
+                {
+                    SendInputClass.KeyPress(0x32);
+                    System.Threading.Thread.Sleep(100);
+                    SendInputClass.KeyRelease(0x32);
+                }
+                    //SendKeys.Send("2");
             };
 
             Timer t3 = new Timer();
@@ -269,7 +279,12 @@ namespace KOMacro
             t3.Tick += delegate
             {
                 if (!ApplicationIsActivated())
-                    SendKeys.Send("3");
+                {
+                    SendInputClass.KeyPress(0x33);
+                    System.Threading.Thread.Sleep(100);
+                    SendInputClass.KeyRelease(0x33);
+                }
+                    //SendKeys.Send("3");
             };
 
             Timer t4 = new Timer();
@@ -277,7 +292,12 @@ namespace KOMacro
             t4.Tick += delegate
             {
                 if (!ApplicationIsActivated())
-                    SendKeys.Send("4");
+                {
+                    SendInputClass.KeyPress(0x33);
+                    System.Threading.Thread.Sleep(100);
+                    SendInputClass.KeyRelease(0x33);
+                }
+                    //SendKeys.Send("4");
             };
 
             Timer t5 = new Timer();
@@ -285,7 +305,12 @@ namespace KOMacro
             t5.Tick += delegate
             {
                 if (!ApplicationIsActivated())
-                    SendKeys.Send("5");
+                {
+                    SendInputClass.KeyPress(0x34);
+                    System.Threading.Thread.Sleep(100);
+                    SendInputClass.KeyRelease(0x34);
+                }
+                    //SendKeys.Send("5");
             };
 
             Timer t6 = new Timer();
@@ -293,7 +318,12 @@ namespace KOMacro
             t6.Tick += delegate
             {
                 if (!ApplicationIsActivated())
-                    SendKeys.Send("6");
+                {
+                    SendInputClass.KeyPress(0x35);
+                    System.Threading.Thread.Sleep(100);
+                    SendInputClass.KeyRelease(0x35);
+                }
+                    //SendKeys.Send("6");
             };
 
             Timer t7 = new Timer();
@@ -301,7 +331,12 @@ namespace KOMacro
             t7.Tick += delegate
             {
                 if (!ApplicationIsActivated())
-                    SendKeys.Send("7");
+                {
+                    SendInputClass.KeyPress(0x36);
+                    System.Threading.Thread.Sleep(100);
+                    SendInputClass.KeyRelease(0x36);
+                }
+                    //SendKeys.Send("7");
             };
 
             Skill skill1 = new Skill(t1);

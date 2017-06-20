@@ -20,7 +20,11 @@ namespace KOMacro
             {
                 if (!frmKOmacro.instance.ApplicationIsActivated())
                 {
-                    SendKeys.Send("z");
+                    SendInputClass.KeyPress(0x5A);
+                    System.Threading.Thread.Sleep(100);
+                    SendInputClass.KeyRelease(0x5A);
+
+                    //SendKeys.Send("z");
                 }
                 //Console.WriteLine("z button pressed. " + zTimer.Interval);
             };
@@ -32,7 +36,11 @@ namespace KOMacro
             {
                 if (!frmKOmacro.instance.ApplicationIsActivated())
                 {
-                    SendKeys.Send("r");
+                    SendInputClass.KeyPress(0x52);
+                    System.Threading.Thread.Sleep(100);
+                    SendInputClass.KeyRelease(0x52);
+
+                    //SendKeys.Send("r");
                 }
                 //Console.WriteLine("r button pressed. " + rTimer.Interval);
             };
